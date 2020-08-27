@@ -37,7 +37,7 @@ export default function Header({ fixed, bgImage }) {
                 <div className="bg-red-600 w-20 text-center text-white pr-4 py-2 rounded-full">
                   <i className="fa fa-caret-left px-3"></i>
                   <Link href="">
-                    <a className="font-semibold">Back</a>
+                    <a className="font-semibold text-sm sm:text-base">Back</a>
                   </Link>
                 </div>
               </div>
