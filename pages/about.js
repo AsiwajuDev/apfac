@@ -16,7 +16,7 @@ export default function About() {
       </Head>
       <div>
         <div
-          className="bg-cover bg-no-repeat bg-top pt-10 pb-12"
+          className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
           style={{ backgroundImage: "url(/favicon/about.jpg)" }}
         >
           <div className="container px-5 lg:mx-auto">

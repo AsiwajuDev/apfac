@@ -10,7 +10,7 @@ export default function Contact() {
       </Head>
       <div>
         <div
-          className="bg-cover bg-no-repeat bg-top pt-6 pb-4"
+          className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
           style={{ backgroundImage: "url(/favicon/contact.jpg)" }}
         >
           <div className="container px-5 lg:mx-auto">

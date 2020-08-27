@@ -24,7 +24,7 @@ export default function Gallery() {
                   africa alive!
                 </p>
               </div>
-              <div className="flex mb-4">
+              <div className="flex flex-wrap mb-4">
                 <div className="w-1/4 m-4 bg-white py-2">
                   <div className="mx-16">
                     <p className="">

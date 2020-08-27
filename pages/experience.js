@@ -49,7 +49,7 @@ export default function Experience() {
                       <p className="capitalize text-white font-bold text-2xl">
                         Experience
                       </p>
-                      <p className="text-white text-6xl leading-none sm:text-7xl font-bold pb-4">
+                      <p className="text-white text-5xl leading-none sm:text-7xl font-bold pb-4">
                         watch the shows online
                       </p>
                     </div>
