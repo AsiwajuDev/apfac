@@ -11,7 +11,7 @@ export default function Index() {
       </Head>
       <div>
         <div
-          className="bg-cover bg-no-repeat bg-top pt-10 pb-16"
+          className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
           style={{ backgroundImage: "url(/favicon/home-bg.jpg)" }}
         >
           <div className="container px-5 lg:mx-auto">

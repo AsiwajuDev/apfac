@@ -50,11 +50,11 @@ export default function Newsroom() {
                 </div>
               </div>
               <div className="md:w-4/5 my-auto">
-                <div className="mx-16">
+                <div className="mx-4">
                   <p className="capitalize text-white font-bold text-2xl">
                     Newsroom
                   </p>
-                  <p className="text-white text-6xl leading-none sm:text-7xl font-bold pb-4">
+                  <p className="text-white text-5xl leading-none sm:text-7xl font-bold pb-4">
                     watch thousands of news and series on all your devices...
                   </p>
                 </div>

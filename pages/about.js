@@ -7,7 +7,7 @@ export default function About() {
   fetch("https://test.usapfac.org/wp-json/wp/v2/posts")
     .then((response) => response.json())
     .then((data) => console.log(data))
-    .catch((er) => console.log(err));
+    .catch((err) => console.log(err));
 
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
@@ -16,7 +16,7 @@ export default function About() {
       </Head>
       <div>
         <div
-          className="bg-cover bg-no-repeat bg-top pt-6 pb-4"
+          className="bg-cover bg-no-repeat bg-top pt-10 pb-12"
           style={{ backgroundImage: "url(/favicon/about.jpg)" }}
         >
           <div className="container px-5 lg:mx-auto">
