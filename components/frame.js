@@ -3,7 +3,7 @@ import Link from "next/link";
 const Frame = ({ media, name, mediaTitle }) => {
   return (
     <div className="">
-      <div className="w-40">
+      <div className=" w-48 lg:w-40">
         <div className="zoom-in">
           <div className="box bg-gray-500">
             <Link href="#">
