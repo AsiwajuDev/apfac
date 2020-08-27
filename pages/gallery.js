@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import { SITE_NAME } from "../lib/constants";
 import Frame from "../components/frame";
+import Card from "../components/card";
 
 export default function Gallery() {
   return (
@@ -15,7 +16,7 @@ export default function Gallery() {
           style={{ backgroundImage: "url(/favicon/gallery.jpg)" }}
         >
           <div className="container lg:mx-auto">
-            <div className="mx-20 md:mx-4 lg:mx-0">
+            <div className="sm:mx-20 md:mx-4 lg:mx-0">
               <div className="mx-4">
                 <p className="capitalize text-white font-semibold text-2xl">
                   Gallery
@@ -24,49 +25,25 @@ export default function Gallery() {
                   africa alive!
                 </p>
               </div>
-              <div className="flex flex-wrap mb-4">
-                <div className="w-1/4 m-4 bg-white py-2">
-                  <div className="mx-16">
-                    <p className="">
-                      <div className="capitalize font-semibold text-sm sm:text-base mb-1">
-                        1st Edition Picture
-                      </div>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </p>
-                    <Frame mediaTitle="Africa peace festival art and culture 2019" />
-                  </div>
-                </div>
-                <div className="w-1/4 m-4 bg-white py-2">
-                  <div className="mx-16">
-                    <p className="">
-                      <div className="capitalize font-semibold text-sm sm:text-base mb-1">
-                        Seminars
-                      </div>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </p>
-                    <Frame mediaTitle="Africa peace festival art and culture 2019" />
-                  </div>
-                </div>
-                <div className="w-1/4 m-4 bg-white py-2">
-                  <div className="mx-16">
-                    <p className="">
-                      <div className="capitalize font-semibold text-sm sm:text-base mb-1">
-                        Meetings
-                      </div>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </p>
-                    <Frame mediaTitle="Africa peace festival art and culture 2019" />
-                  </div>
-                </div>
-                <div className="w-1/4 m-4 bg-white py-2">
-                  <div className="mx-16">
-                    <p className="">
-                      <div className="capitalize font-semibold text-sm sm:text-base mb-1">
-                        2020 Programmes
-                      </div>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </p>
-                    <Frame mediaTitle="Africa peace festival art and culture 2019" />
+              <div className="mb-10 mx-6">
+                <div class="col-span-12 mt-8">
+                  <div class="grid grid-cols-12 gap-6 mt-5">
+                    <Card
+                      cardTitle="1st Edition Pictures"
+                      mediaTitle="Africa peace festival art and culture 2019"
+                    />
+                    <Card
+                      cardTitle="Seminar"
+                      mediaTitle="Africa peace festival art and culture 2019"
+                    />
+                    <Card
+                      cardTitle="Meeting"
+                      mediaTitle="Africa peace festival art and culture 2019"
+                    />
+                    <Card
+                      cardTitle="2020 Programme"
+                      mediaTitle="Africa peace festival art and culture 2019"
+                    />
                   </div>
                 </div>
               </div>
