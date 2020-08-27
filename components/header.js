@@ -12,7 +12,7 @@ export default function Header({ fixed, bgImage }) {
       >
         <nav className="items-center">
           <div className="flex">
-            <div className="flex w-2/3">
+            <div className="flex w-2/3 pt-4">
               <Link href="/">
                 <a>
                   <img
@@ -33,21 +33,23 @@ export default function Header({ fixed, bgImage }) {
               </div>
             </div>
             <div className="w-1/3">
-              <div className="flex justify-center">
-                <div className="bg-red-600 w-20 text-center text-white pr-4 py-2 rounded-full">
-                  <i className="fa fa-caret-left px-3"></i>
+              <div className="flex justify-center md:ml-24">
+                <div className="bg-red-600 w-16 sm:w-20 text-center text-white sm:pr-4 sm:py-1 rounded-full">
+                  <i className="fa fa-caret-left px-1 sm:px-3"></i>
                   <Link href="">
-                    <a className="font-semibold text-sm sm:text-base">Back</a>
+                    <a className="font-semibold text-sm px-1 sm:px-0 sm:text-base">
+                      Back
+                    </a>
                   </Link>
                 </div>
               </div>
 
-              <div className=" flex mx-12">
+              <div className="flex justify-center">
                 <Link href="#">
                   <a>
                     <img
                       src="/favicon/sales.png"
-                      className="h-10 sm:h-16 md:h-20 lg:h-24 mt-4 md:mt-6"
+                      className="h-10 sm:h-16 md:h-20 lg:h-24 mt-2 md:mt-4"
                     />
                   </a>
                 </Link>
