@@ -13,9 +13,9 @@ export default function Experience() {
       </Head>
       <div>
         <div className="flex flex-wrap justify-center  md:flex-no-wrap md:justify-between lg:mx-0">
-          <div className="md:w-1/5">
+          <div className="md:w-2/6 lg:w-1/5">
             <div className="hidden md:block bg-white overflow-hidden">
-              <div className="px-6 pt-3 ml-12">
+              <div className="px-6 pt-12 ml-10">
                 <div className="mb-4">
                   <p className="mb-3">
                     <div className="capitalize font-bold text-sm sm:text-lg lg:text-lg mb-1">
@@ -37,20 +37,20 @@ export default function Experience() {
               </div>
             </div>
           </div>
-          <div className="md:w-4/5">
+          <div className="md:w-4/6 lg:w-4/5">
             <div className="container lg:mx-auto">
               <div
                 className="bg-cover bg-no-repeat bg-top py-40"
                 style={{ backgroundImage: "url(/favicon/experience.jpg)" }}
               >
-                <div className="container px-5 lg:mx-auto">
+                <div className="container px-5 py-10 lg:mx-auto">
                   <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
                     <div className="mb-4">
                       <div className="mx-6 mb-6">
                         <p className="capitalize text-white font-bold text-xl">
                           Experience
                         </p>
-                        <p className="text-white text-6xl leading-none sm:text-7xl font-bold pb-4">
+                        <p className="text-white text-5xl leading-none sm:text-7xl font-bold pb-4">
                           watch the
                           <br /> shows online
                         </p>
