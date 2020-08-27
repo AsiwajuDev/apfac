@@ -1,58 +1,85 @@
+import React, { useState } from "react";
 import Link from "next/link";
-import { useState } from "react";
+import NavBar from "./navbar";
 
-function Header() {
-  const [isExpanded, toggleExpansion] = useState(false);
-
+export default function Header({ fixed, bgImage }) {
+  const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <header className="bg-teal-500">
-      <div className="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:flex-no-wrap md:p-8">
-        <div className="flex items-center">
-          <img
-            src="tailwind-logo.svg"
-            className="w-10 mr-3 text-white"
-          />
-
-          <Link href="/">
-            <a className="text-xl font-bold text-white">
-              Next.js Starter Tailwind
-            </a>
-          </Link>
-        </div>
-
-        <button
-          className="flex items-center block px-3 py-2 text-white border border-white rounded md:hidden"
-          onClick={() => toggleExpansion(!isExpanded)}
-        >
-          <svg
-            className="w-3 h-3 fill-current"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
-
-        <ul
-          className={`${
-            isExpanded ? `block` : `hidden`
-          } md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto`}
-        >
-          {[
-            { title: "Home", route: "/" },
-            { title: "About", route: "/about" }
-          ].map(navigationItem => (
-            <li className="mt-3 md:mt-0 md:ml-6" key={navigationItem.title}>
-              <Link href={navigationItem.route}>
-                <a className="block text-white">{navigationItem.title}</a>
+    <div>
+      <div
+        className="mx-auto bg-cover bg-bottom h-auto p-4 pb-1 md:p-8 md:pb-2"
+        style={bgImage}
+      >
+        <nav className="items-center">
+          <div className="flex">
+            <div className="flex w-2/3">
+              <Link href="/">
+                <a>
+                  <img
+                    src="/favicon/logo.png"
+                    className="h-12 sm:h-16 md:h-24 lg:h-32"
+                  />
+                </a>
               </Link>
-            </li>
-          ))}
-        </ul>
+              <div className="pl-4">
+                <Link href="/">
+                  <a>
+                    <img
+                      src="/favicon/logo2.png"
+                      className="h-12 sm:h-16 md:h-24 lg:h-32"
+                    />
+                  </a>
+                </Link>
+              </div>
+            </div>
+            <div className="w-1/3">
+              <div className="flex justify-center">
+                <div className="bg-red-600 w-20 text-center text-white pr-4 py-2 rounded-full">
+                  <i className="fa fa-caret-left px-3"></i>
+                  <Link href="">
+                    <a className="font-semibold">Back</a>
+                  </Link>
+                </div>
+              </div>
+
+              <div className=" flex mx-12">
+                <Link href="#">
+                  <a>
+                    <img
+                      src="/favicon/sales.png"
+                      className="h-10 sm:h-16 md:h-20 lg:h-24 mt-4 md:mt-6"
+                    />
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <nav className="relative flex flex-wrap items-center bg-cover h-auto justify-end px-2 pt-2 navbar-expand-lg">
+          <div className="flex flex-wrap items-center justify-between">
+            <div className="w-full relative flex justify-end lg:w-auto lg:static lg:block lg:justify-start">
+              <button
+                className="text-white cursor-pointer text-xl leading-none px-3 text-right py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                type="button"
+                onClick={() => setNavbarOpen(!navbarOpen)}
+              >
+                <i className="fa fa-bars"></i>
+              </button>
+            </div>
+            <div
+              className={
+                "lg:flex flex-grow items-center" +
+                (navbarOpen ? " flex" : " hidden")
+              }
+              id="example-navbar-danger"
+            >
+              <NavBar />
+            </div>
+          </div>
+        </nav>
       </div>
-    </header>
+      <div className="bg-red-600 h-12"></div>
+    </div>
   );
 }
-
-export default Header;
