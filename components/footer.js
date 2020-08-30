@@ -44,22 +44,22 @@ export default function Footer() {
             USAPFAC. All Rights Reserved.
           </h3>
           <div className="flex justify-center">
-            <Link href="#">
+            <Link href="/about">
               <a className="mx-2 text-sm sm:text-base text-gray-600 hover:text-white capitalize">
                 About
               </a>
             </Link>
-            <Link href="#">
+            <Link href="/contact">
               <a className="mx-2 text-sm sm:text-base text-gray-600 hover:text-white capitalize">
                 Contact us
               </a>
             </Link>
-            <Link href="#">
+            <Link href="/buy-ticket">
               <a className="mx-2 text-sm sm:text-base text-gray-600 hover:text-white capitalize">
                 Buy tickets
               </a>
             </Link>
-            <Link href="#">
+            <Link href="/gallery">
               <a className="mx-2 text-sm sm:text-base text-gray-600 hover:text-white capitalize">
                 Gallery
               </a>

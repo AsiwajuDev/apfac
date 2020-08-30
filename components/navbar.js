@@ -18,7 +18,7 @@ export default function NavBar() {
                   transition duration-150 origin-top"
           >
             <li className="relative py-1">
-              <Link href="#">
+              <Link href="">
                 <a className="w-full px-4 text-left list-none font-semibold text-sm flex items-center">
                   Spotlights
                   <span className="pl-8">
@@ -34,12 +34,12 @@ export default function NavBar() {
   transition duration-150 ease-in-out origin-top-left divide-y divide-white"
               >
                 <li className="px-8 py-2">
-                  <Link href="#">
+                  <Link href="/story/connectivity">
                     <a className="text-white">Connectivity</a>
                   </Link>
                 </li>
                 <li className="px-8 py-2">
-                  <Link href="#">
+                  <Link href="/story/education">
                     <a className="text-white">Education</a>
                   </Link>
                 </li>
@@ -65,21 +65,21 @@ export default function NavBar() {
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/values">
                   <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     Values
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/staff-and-board">
                   <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     Staff and Board
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/sponsors">
                   <a className="bg-black rounded-b-lg hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     Sponsors
                   </a>
@@ -99,28 +99,28 @@ export default function NavBar() {
             </span>
             <ul className="dropdown-menu z-20 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
               <li className="">
-                <Link href="/newsroom">
+                <Link href="/newsroom/african-news">
                   <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 pr-8 block whitespace-no-wrap">
                     African News
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/newsroom/world-news">
                   <a className="bg-black hover:bg-black py-2 px-4 pr-8 block whitespace-no-wrap">
                     World News
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/newsroom/local-news">
                   <a className="bg-black hover:bg-black py-2 px-4 pr-8 block whitespace-no-wrap">
                     Local News
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/newsroom/covid-19">
                   <a className="bg-black rounded-b-lg hover:bg-black py-2 px-4 pr-8 block whitespace-no-wrap">
                     Covid 19
                   </a>
@@ -140,21 +140,21 @@ export default function NavBar() {
             </span>
             <ul className="dropdown-menu z-20 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
               <li className="">
-                <Link href="/experience">
+                <Link href="/experience/1st-edition">
                   <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     1st Edition
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/experience/2nd-edition">
                   <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     2nd Edition
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/experience/entertainment">
                   <a className="bg-black rounded-b-lg hover:bg-black py-2 px-4 pr-10 block whitespace-no-wrap">
                     Entertainments
                   </a>
@@ -174,28 +174,28 @@ export default function NavBar() {
             </span>
             <ul className="dropdown-menu z-20 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
               <li className="">
-                <Link href="/gallery">
+                <Link href="/gallery/1st-edition-pictures">
                   <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     1st Edition Pictures
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/gallery/seminar">
                   <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     Seminars
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/gallery/meeting">
                   <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     Meeting
                   </a>
                 </Link>
               </li>
               <li className="">
-                <Link href="#">
+                <Link href="/gallery/programme">
                   <a className="bg-black rounded-b-lg hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     Programme for <br /> 2020 Edition
                   </a>
