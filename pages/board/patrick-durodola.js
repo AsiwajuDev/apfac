@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Layout from "../components/layout";
-import { SITE_NAME } from "../lib/constants";
-import Frame from "../components/frame";
+import Layout from "../../components/layout";
+import { SITE_NAME } from "../../lib/constants";
+import Frame from "../../components/frame";
 
 export default function Patrick() {
   return (
