@@ -1,7 +1,7 @@
 import React from "react";
 import Frame from "./frame";
 
-const Card = ({ cardTitle, mediaTitle }) => {
+const Card = ({ cardTitle, mediaTitle, media }) => {
   return (
     <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
       <div className="">
@@ -12,7 +12,7 @@ const Card = ({ cardTitle, mediaTitle }) => {
             </p>
             <div className="border-2 border-red-600 w-16"></div>
           </div>
-          <Frame mediaTitle={mediaTitle} />
+          <Frame mediaTitle={mediaTitle} media={media} />
         </div>
       </div>
     </div>
