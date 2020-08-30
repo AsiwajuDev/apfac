@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NavBar() {
   return (
     <div>
-      <div className="flex flex-row flex-wrap lg:flex-row list-none sm:justify-center">
+      <div className="flex flex-row flex-wrap mt-3 lg:flex-row list-none sm:justify-center">
         <div className="group inline-block">
           <button className="bg-transparent mb-2 border border-white hover:border-red-500 font-semibold py-2 w-32 justify-center rounded-full inline-flex items-center">
             <span className="pr-1 font-semibold text-white flex-1">
