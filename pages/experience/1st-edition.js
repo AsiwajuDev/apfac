@@ -46,7 +46,7 @@ export default function FirstEdition() {
                 <div className="container px-5 py-10 lg:mx-auto">
                   <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
                     <div className="mb-4">
-                      <div className="mx-6 mb-6">
+                      <div className="mx-3 sm:mx-6 mb-6">
                         <p className="capitalize text-white font-bold text-xl">
                           Experience
                         </p>
