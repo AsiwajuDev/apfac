@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../components/layout";
 import { SITE_NAME } from "../lib/constants";
 import Frame from "../components/frame";
-import ImageFrame from "../components/imageFrame";
+import CardFrame from "../components/cardFrame";
 
 export default function Staff() {
   return (
@@ -25,28 +25,28 @@ export default function Staff() {
               <div className="mb-10 mx-6">
                 <div class="col-span-12 mt-8">
                   <div class="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
-                    <ImageFrame
+                    <CardFrame
                       image="/about/patrick-durodola.jpeg"
                       bgColor="bg-white"
                       imageTitle="Patrick Durodola"
                       imageBody="Director"
                       pageUrl="patrick-durodola"
                     />
-                    <ImageFrame
+                    <CardFrame
                       image="/about/patrick-durodola.jpeg"
                       bgColor="bg-white"
                       imageTitle="Patrick Durodola"
                       imageBody="Director"
                       pageUrl="patrick-durodola"
                     />
-                    <ImageFrame
+                    <CardFrame
                       image="/about/patrick-durodola.jpeg"
                       bgColor="bg-white"
                       imageTitle="Patrick Durodola"
                       imageBody="Director"
                       pageUrl="patrick-durodola"
                     />
-                    <ImageFrame
+                    <CardFrame
                       image="/about/patrick-durodola.jpeg"
                       bgColor="bg-white"
                       imageTitle="Patrick Durodola"

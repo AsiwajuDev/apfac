@@ -2,8 +2,46 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
+import ImageFrame from "../../components/imageFrame";
+import { data } from "autoprefixer";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function Patrick() {
+const Patrick = () => {
+  const [header, setHeader] = useState();
+  const [body, setBody] = useState(null);
+  let url = "https://test.usapfac.org/wp-json/wp/v2/pages/2";
+
+  const getData = async () => {
+    let url = "https://test.usapfac.org/wp-json/wp/v2/posts/11";
+    const response = await axios.get(url);
+    // console.log(response.data.title);
+
+    setHeader(response.data);
+  };
+
+  //   useEffect(() => {
+  //     async function fetchData() {
+  //       let url = "https://test.usapfac.org/wp-json/wp/v2/pages/2";
+  //       const response = await axios.get(url);
+  //       //   console.log(response.data.title);
+  //       const { title, content } = response.data;
+  //       // setHeader(response.data);
+  //       //   setHeader(result);
+  //     }
+  //     fetchData();
+  //   }, []);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  //   console.log(header);
+  //   const { title, content } = header;
+  //   console.log(content);
+  //   console.log(header.title);
+  //   console.log();
+
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -17,31 +55,51 @@ export default function Patrick() {
           <div className="container px-5 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
               <div className="mb-4">
-                <div className="mx-6 mb-6">
-                  <p className="text-white font-bold text-xl">who we are</p>
+                <div className="mx-6">
                   <p className="text-white text-4xl leading-none sm:text-5xl font-bold pb-4">
-                    the power
-                    <br />
-                    of great culture
-                    <br /> and Africa
+                    {!header || header.title.rendered}
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
-                  <div className="max-w-sm rounded bg-white overflow-hidden shadow-lg">
+                  <div className="rounded max-w-2xl bg-white overflow-hidden shadow-lg">
                     <div className="px-6 py-4">
-                      <div className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
-                        A Substainable Goal to Grow Together
+                      <ImageFrame
+                        className="w-64 h-64 mb-3"
+                        imageFull="/about/patrick-durodola.jpeg"
+                      />
+                      <div className="text-gray-800 text-base text-justify">
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: !header || header.content.rendered,
+                          }}
+                        />
+                        {/* {content.rendered} */}
+                        {/* {content} */}
+
+                        {/* <p>
+                          He is a seasoned banker, an enthusiastic and dynamic
+                          Individual with a wealth of experience spanning
+                          African Retail Banking Services, Investment banking,
+                          Public Sector, E-banking services, (ATM & POS,
+                          Internet, Mobile Banking Operations, Card services
+                          etc) in a World/African proven organisation such as
+                          Eco Bank transnational incorporated, First Bank of
+                          Nigeria Plc, Union Bank of Nigeria Plc and Financial
+                          Institution Training Centre.
+                        </p>
+                        <p>
+                          He obtained both Bachelor of Science and Masters of
+                          Science Degree in computer science from University of
+                          Ibadan, Ibadan, Nigeria, Masters in Business
+                          Administration from Ladoke Akintola University Tech.
+                          Ogbomoso. All in Oyo State, Nigeria.
+                        </p> */}
                       </div>
-                      <p className="text-gray-700 text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Voluptatibus quia, nulla! Maiores et perferendis
-                        eaque, exercitationem praesentium nihil.
-                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="hidden md:block rounded w-64 bg-white justify-center overflow-hidden shadow-lg">
+              <div className="hidden lg:block rounded w-64 bg-white justify-center overflow-hidden shadow-lg">
                 <div className="mx-12 py-4">
                   <div>
                     <div className="mb-4">
@@ -87,4 +145,6 @@ export default function Patrick() {
       </div>
     </Layout>
   );
-}
+};
+
+export default Patrick;

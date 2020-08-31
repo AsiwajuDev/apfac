@@ -26,12 +26,30 @@ export default function Sponsors() {
               <div className="mb-10 mx-6">
                 <div class="col-span-12 mt-8">
                   <div class="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
-                    <ImageFrame image="/about/usapfac.jpeg" />
-                    <ImageFrame image="/about/lagos.jpeg" />
-                    <ImageFrame image="/about/royal-roots.jpeg" />
-                    <ImageFrame image="/about/unity.jpeg" />
-                    <ImageFrame image="/about/congress.jpeg" />
-                    <ImageFrame image="/about/nadia.jpeg" />
+                    <ImageFrame
+                      className="w-full h-64"
+                      imageFull="/about/usapfac.jpeg"
+                    />
+                    <ImageFrame
+                      className="w-full h-64"
+                      imageFull="/about/lagos.jpeg"
+                    />
+                    <ImageFrame
+                      className="w-full h-64"
+                      imageFull="/about/royal-roots.jpeg"
+                    />
+                    <ImageFrame
+                      className="w-full h-64"
+                      imageFull="/about/unity.jpeg"
+                    />
+                    <ImageFrame
+                      className="w-full h-64"
+                      imageFull="/about/congress.jpeg"
+                    />
+                    <ImageFrame
+                      className="w-full h-64"
+                      imageFull="/about/nadia.jpeg"
+                    />
                   </div>
                 </div>
               </div>
