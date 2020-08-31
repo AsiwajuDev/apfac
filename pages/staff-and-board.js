@@ -54,6 +54,13 @@ export default function Staff() {
                       imageBody="Director"
                       pageUrl="nivia-nduka"
                     />
+                    <CardFrame
+                      image="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg"
+                      bgColor="bg-white"
+                      imageTitle="Mwalimu Kabaila"
+                      imageBody="Director"
+                      pageUrl="mwalimu-kabaila"
+                    />
                   </div>
                 </div>
               </div>
