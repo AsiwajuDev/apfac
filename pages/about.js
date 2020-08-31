@@ -24,15 +24,13 @@ export default function About() {
               <div className="mb-4">
                 <div className="mx-6 mb-6">
                   <p className="text-white font-bold text-xl">who we are</p>
-                  <p className="text-white text-4xl leading-none sm:text-5xl font-bold pb-4">
-                    the power
-                    <br />
-                    of great culture
-                    <br /> and Africa
+                  <p className="text-white text-4xl leading-none sm:text-6xl font-bold pb-4">
+                    the power of great
+                    <br /> culture and Africa
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
-                  <div className="max-w-2xl rounded bg-white overflow-hidden shadow-lg">
+                  <div className="max-w-3xl rounded bg-white overflow-hidden shadow-lg">
                     <div className="px-6 py-4">
                       <div className="text-green-400 capitalize font-semibold text-sm sm:text-lg lg:text-lg mb-2">
                         {/* A Substainable Goal to Grow Together */}

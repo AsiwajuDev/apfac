@@ -83,7 +83,7 @@ export default function Berry() {
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
-                  <div className="rounded max-w-2xl bg-white overflow-hidden shadow-lg">
+                  <div className="rounded max-w-3xl bg-white overflow-hidden shadow-lg">
                     <div className="px-6 py-4">
                       <ImageFrame
                         className="w-64 h-64 mb-3"
