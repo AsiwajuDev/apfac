@@ -22,7 +22,7 @@ export default function Staff() {
                   directors
                 </p>
               </div>
-              <div className="mb-10 mx-6">
+              <div className="mb-10 sm:mx-6 flex justify-center">
                 <div class="col-span-12 mt-8">
                   <div class="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
                     <CardFrame
@@ -33,25 +33,26 @@ export default function Staff() {
                       pageUrl="patrick-durodola"
                     />
                     <CardFrame
-                      image="/about/patrick-durodola.jpeg"
+                      image="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg"
                       bgColor="bg-white"
-                      imageTitle="Patrick Durodola"
+                      imageTitle="Azubuike Chinedum Okoronkwo"
                       imageBody="Director"
-                      pageUrl="patrick-durodola"
+                      pageUrl="azubuike-chinedum"
                     />
                     <CardFrame
-                      image="/about/patrick-durodola.jpeg"
+                      image="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg"
                       bgColor="bg-white"
-                      imageTitle="Patrick Durodola"
+                      imageTitle="Franchesska Berry"
                       imageBody="Director"
-                      pageUrl="patrick-durodola"
+                      pageUrl="franchesska-berry"
                     />
                     <CardFrame
-                      image="/about/patrick-durodola.jpeg"
+                      image="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg"
                       bgColor="bg-white"
-                      imageTitle="Patrick Durodola"
+                      imageTitle="Nivia Nduka"
+                      imageHead="(Afrikan Simba)"
                       imageBody="Director"
-                      pageUrl="patrick-durodola"
+                      pageUrl="nivia-nduka"
                     />
                   </div>
                 </div>

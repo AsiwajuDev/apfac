@@ -8,6 +8,7 @@ const CardFrame = ({
   bgColor,
   pageUrl,
   imageTitle,
+  imageHead,
 }) => {
   return (
     <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
@@ -19,7 +20,11 @@ const CardFrame = ({
             </a>
           </Link>
           <div class="px-6 py-4 text-center">
-            <div class="font-semibold text-green-400 text-xl">{imageTitle}</div>
+            <div class="font-semibold capitalize text-green-400 text-xl">
+              {imageTitle}
+              <br />
+              {imageHead}
+            </div>
             <p class="text-gray-700 font-semibold text-base">{imageBody}</p>
           </div>
         </div>
