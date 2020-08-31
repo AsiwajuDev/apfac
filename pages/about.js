@@ -117,7 +117,7 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              <div className="hidden md:block rounded w-68 bg-white justify-center overflow-hidden shadow-lg">
+              <div className="hidden md:block rounded w-64 h-68 bg-white justify-center overflow-hidden shadow-lg">
                 <div className="mx-12 py-4">
                   <div>
                     <div className="mb-4">
