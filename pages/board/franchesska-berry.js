@@ -87,7 +87,7 @@ export default function Berry() {
                     <div className="px-6 py-4">
                       <ImageFrame
                         className="w-64 h-64 mb-3"
-                        imageFull="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg"
+                        imageFull="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                       />
                       <div className="text-gray-800 text-sm sm:text-base text-justify">
                         {/* <p

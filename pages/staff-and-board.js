@@ -33,29 +33,28 @@ export default function Staff() {
                       pageUrl="patrick-durodola"
                     />
                     <CardFrame
-                      image="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg"
+                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                       bgColor="bg-white"
-                      imageTitle="Azubuike Chinedum Okoronkwo"
+                      imageTitle="Azubuike Okoronkwo"
                       imageBody="Director"
                       pageUrl="azubuike-chinedum"
                     />
                     <CardFrame
-                      image="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg"
+                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                       bgColor="bg-white"
                       imageTitle="Franchesska Berry"
                       imageBody="Director"
                       pageUrl="franchesska-berry"
                     />
                     <CardFrame
-                      image="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg"
+                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                       bgColor="bg-white"
                       imageTitle="Nivia Nduka"
-                      imageHead="(Afrikan Simba)"
                       imageBody="Director"
                       pageUrl="nivia-nduka"
                     />
                     <CardFrame
-                      image="https://hennesseyonline.com/wp-content/uploads/2015/05/staff-placeholder-male.jpg"
+                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                       bgColor="bg-white"
                       imageTitle="Mwalimu Kabaila"
                       imageBody="Director"
