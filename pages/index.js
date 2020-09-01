@@ -58,18 +58,16 @@ export default function Index() {
                   </p>
 
                   <div>
-                    <Frame />
-                    <Frame />
-                    <Frame />
+                    <Frame media="/favicon/media1.jpg" />
+                    <Frame media="/favicon/media2.jpg" />
+                    <Frame media="/favicon/media3.jpg" />
                   </div>
                   <p className="mb-4">
                     <div className="capitalize font-bold text-sm sm:text-lg lg:text-lg mb-1">
                       Category
                     </div>
                   </p>
-                  <div>
-                    <Frame />
-                  </div>
+                  <div>{/* <Frame media="/favicon/media1.jpg" /> */}</div>
                 </div>
               </div>
               {/* <div className="justify-end"></div> */}

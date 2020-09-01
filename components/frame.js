@@ -8,7 +8,11 @@ const Frame = ({ media, name, mediaTitle }) => {
           <div className="box bg-gray-500">
             <Link href="#">
               <a>
-                <img className="mt-3 mb-1 h-24" src={media} alt={name} />
+                <img
+                  className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                  src={media}
+                  alt={name}
+                />
               </a>
             </Link>
           </div>

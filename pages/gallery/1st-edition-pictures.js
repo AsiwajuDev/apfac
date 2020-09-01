@@ -31,18 +31,22 @@ export default function FirstEditionPicture() {
                     <Card
                       cardTitle="1st Edition Pictures"
                       mediaTitle="Africa peace festival art and culture 2019"
+                      media="/favicon/gallery1.jpg"
                     />
                     <Card
                       cardTitle="Seminar"
                       mediaTitle="Africa peace festival art and culture 2019"
+                      media="/favicon/gallery2.jpg"
                     />
                     <Card
                       cardTitle="Meeting"
                       mediaTitle="Africa peace festival art and culture 2019"
+                      media="/favicon/gallery3.jpg"
                     />
                     <Card
                       cardTitle="2020 Programme"
                       mediaTitle="Africa peace festival art and culture 2019"
+                      media="/favicon/gallery4.jpg"
                     />
                   </div>
                 </div>

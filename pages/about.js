@@ -125,7 +125,7 @@ export default function About() {
                       <div className="border-2 border-red-600 w-16"></div>
                     </div>
                     <div>
-                      <Frame />
+                      <Frame media="/favicon/about1.jpg" />
                     </div>
                   </div>
 
@@ -137,7 +137,7 @@ export default function About() {
                       <div className="border-2 border-red-600 w-16"></div>
                     </div>
                     <div>
-                      <Frame />
+                      <Frame media="/favicon/about1.jpg" />
                     </div>
                   </div>
 
@@ -149,7 +149,7 @@ export default function About() {
                       <div className="border-2 border-red-600 w-16"></div>
                     </div>
                     <div>
-                      <Frame />
+                      <Frame media="/favicon/about3.jpg" />
                     </div>
                   </div>
                 </div>

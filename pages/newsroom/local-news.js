@@ -26,7 +26,7 @@ export default function LocalNews() {
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
                       </p>
-                      <Frame />
+                      <Frame media="/favicon/newsroom2.jpg" />
                     </div>
                     <div className="mb-3">
                       <p className="mb-3">
@@ -35,7 +35,7 @@ export default function LocalNews() {
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
                       </p>
-                      <Frame />
+                      <Frame media="/favicon/newsroom2.jpg" />
                     </div>
                     <div className="mb-3">
                       <p className="mb-3">
@@ -44,7 +44,7 @@ export default function LocalNews() {
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
                       </p>
-                      <Frame />
+                      <Frame media="/favicon/newsroom3.jpg" />
                     </div>
                   </div>
                 </div>

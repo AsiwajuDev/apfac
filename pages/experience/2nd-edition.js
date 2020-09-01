@@ -23,7 +23,10 @@ export default function SecondEdition() {
                     </div>
                     <div className="border-2 border-red-600 w-16"></div>
                   </p>
-                  <Frame mediaTitle="Africa peace festival art and culture 2019" />
+                  <Frame
+                    mediaTitle="Africa peace festival art and culture 2019"
+                    media="/favicon/experience1.jpg"
+                  />
                 </div>
                 <div className="mb-4">
                   <p className="mb-3">
@@ -32,7 +35,10 @@ export default function SecondEdition() {
                     </div>
                     <div className="border-2 border-red-600 w-16"></div>
                   </p>
-                  <Frame mediaTitle="Africa peace festival art and culture 2019" />
+                  <Frame
+                    mediaTitle="Africa peace festival art and culture 2020"
+                    media="/favicon/experience2.jpg"
+                  />
                 </div>
               </div>
             </div>
