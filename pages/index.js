@@ -27,15 +27,22 @@ export default function Index() {
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
-                  <div className="max-w-sm rounded bg-white overflow-hidden shadow-lg">
+                  <div className="rounded max-w-sm lg:max-w-md bg-white overflow-hidden shadow-lg">
                     <div className="px-6 py-4">
                       <div className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
                         A Substainable Goal to Grow Together
                       </div>
-                      <p className="text-gray-700 text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Voluptatibus quia, nulla! Maiores et perferendis
-                        eaque, exercitationem praesentium nihil.
+                      <p className="text-gray-800 text-sm text-justify lg:text-base leading-tight">
+                        <span className="text-5xl font-semibold initial-letter">
+                          O
+                        </span>
+                        ne of the pre-eminent objectives of APFAC is to
+                        consistently celebrate whatever strides that have been
+                        achieved in the march of Pan Africans towards
+                        sustainable accomplishment by the presentation of the
+                        Annual Global Peace Awards, to serve as veritable
+                        motivation for youths to continue to progress
+                        satisfactorily on all fronts on the global terrain.
                       </p>
                     </div>
                   </div>

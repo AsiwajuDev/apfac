@@ -33,7 +33,7 @@ export default function Header({ fixed, bgImage }) {
               </div>
             </div>
             <div className="w-1/3">
-              <div className="flex justify-center md:ml-24">
+              {/* <div className="flex justify-center md:ml-24">
                 <div className="bg-red-600 w-16 sm:w-20 text-center text-white sm:pr-4 sm:py-1 rounded-full">
                   <i className="fa fa-caret-left px-1 sm:px-3"></i>
                   <Link href="">
@@ -42,7 +42,7 @@ export default function Header({ fixed, bgImage }) {
                     </a>
                   </Link>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex justify-center">
                 <Link href="#">
