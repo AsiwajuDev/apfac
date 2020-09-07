@@ -72,9 +72,16 @@ export default function NavBar() {
                 </Link>
               </li>
               <li className="">
-                <Link href="/staff-and-board">
+                <Link href="/staff">
                   <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
-                    Staff and Board
+                    Staff
+                  </a>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/board">
+                  <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
+                    Board
                   </a>
                 </Link>
               </li>

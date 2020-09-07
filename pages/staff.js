@@ -19,7 +19,7 @@ export default function Staff() {
             <div className="sm:mx-20 md:mx-4 lg:mx-0">
               <div className="flex justify-center">
                 <p className="text-white text-6xl leading-none sm:text-7xl font-bold pb-4">
-                  directors
+                  staff
                 </p>
               </div>
               <div className="mb-10 sm:mx-6 flex justify-center">
@@ -30,16 +30,16 @@ export default function Staff() {
                       bgColor="bg-white"
                       imageTitle="Patrick Durodola"
                       imageBody="Director"
-                      pageUrl="patrick-durodola"
+                      pageUrl="staff/patrick-durodola"
                     />
                     <CardFrame
                       image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                       bgColor="bg-white"
                       imageTitle="Azubuike Okoronkwo"
                       imageBody="Director"
-                      pageUrl="azubuike-chinedum"
+                      pageUrl="staff/azubuike-chinedum"
                     />
-                    <CardFrame
+                    {/* <CardFrame
                       image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                       bgColor="bg-white"
                       imageTitle="Franchesska Berry"
@@ -59,7 +59,7 @@ export default function Staff() {
                       imageTitle="Mwalimu Kabaila"
                       imageBody="Director"
                       pageUrl="mwalimu-kabaila"
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>

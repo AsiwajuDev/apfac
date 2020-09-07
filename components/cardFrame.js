@@ -11,10 +11,10 @@ const CardFrame = ({
   imageHead,
 }) => {
   return (
-    <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+    <div className="col-span-12 sm:col-span-3 xl:col-span-3 intro-y">
       <div class="max-w-sm rounded overflow-hidden shadow-lg">
         <div className={bgColor}>
-          <Link href={`/board/${pageUrl}`}>
+          <Link href={`/${pageUrl}`}>
             <a>
               <img class="w-full h-64" src={image} alt={imageName} />
             </a>

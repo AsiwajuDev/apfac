@@ -18,24 +18,26 @@ export default function Values() {
             <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
               <div className="mb-4">
                 <div className="mx-6 mb-6">
-                  <p className="text-white font-bold text-xl">who we are</p>
+                  {/* <p className="text-white font-bold text-xl">who we are</p> */}
                   <p className="text-white text-4xl leading-none sm:text-5xl font-bold pb-4">
-                    the power
-                    <br />
-                    of great culture
-                    <br /> and Africa
+                    core value
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
                   <div className="max-w-sm rounded bg-white overflow-hidden shadow-lg">
                     <div className="px-6 py-4">
-                      <div className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
+                      {/* <div className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
                         A Substainable Goal to Grow Together
-                      </div>
-                      <p className="text-gray-700 text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Voluptatibus quia, nulla! Maiores et perferendis
-                        eaque, exercitationem praesentium nihil.
+                      </div> */}
+                      <p className="text-gray-800 text-sm text-justify lg:text-base leading-tight">
+                        <span className="text-5xl font-semibold initial-letter">
+                          APFAC
+                        </span>
+                        core value is to ensure that PAN AFRIKAN youths are
+                        trained, developed and empowered by enhanced skills
+                        acquisition, social and economic development,
+                        educational development within communities with arts
+                        cultural related activities.
                       </p>
                     </div>
                   </div>
