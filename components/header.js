@@ -45,14 +45,39 @@ export default function Header({ fixed, bgImage }) {
               </div> */}
 
               <div className="flex justify-center">
-                <Link href="#">
+                <div className="dropdown inline-block relative">
+                  <a className="bg-transparent rounded-full inline-flex items-center">
+                    <img
+                      src="/favicon/sales.png"
+                      className="h-10 sm:h-16 md:h-20 lg:h-24 mt-2 md:mt-4"
+                    />
+                  </a>
+
+                  <ul className="dropdown-menu z-20 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
+                    <li className="">
+                      <Link href="/buy-ticket">
+                        <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
+                          Buy Ticket
+                        </a>
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href="/sales">
+                        <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
+                          Sales
+                        </a>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                {/* <Link href="#">
                   <a>
                     <img
                       src="/favicon/sales.png"
                       className="h-10 sm:h-16 md:h-20 lg:h-24 mt-2 md:mt-4"
                     />
                   </a>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
