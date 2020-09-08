@@ -87,7 +87,7 @@ export default function Patrick() {
                     <div className="px-6 py-4">
                       <ImageFrame
                         className="w-64 h-64 mb-3"
-                        imageFull="/about/patrick-durodola.jpeg"
+                        imageFull="/about/PATRICK-DURODOLA.png"
                       />
                       <div className="text-gray-800 text-sm sm:text-base text-justify">
                         {/* <p

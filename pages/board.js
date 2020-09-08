@@ -26,35 +26,35 @@ export default function Board() {
                 <div class="col-span-9 mt-8">
                   <div class="grid grid-cols-12 gap-6 sm:gap-10 mt-5">
                     <CardFrame
-                      image="/about/patrick-durodola.jpeg"
+                      image="/about/PATRICK-DURODOLA.png"
                       bgColor="bg-white"
                       imageTitle="Patrick Durodola"
                       imageBody="Director"
                       pageUrl="board/patrick-durodola"
                     />
                     <CardFrame
-                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+                      image="/about/AZUBUIKE-CHINEDUM-OKORONKWO.png"
                       bgColor="bg-white"
                       imageTitle="Azubuike Okoronkwo"
                       imageBody="Director"
                       pageUrl="board/azubuike-chinedum"
                     />
                     <CardFrame
-                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+                      image="/about/FRANCHESSKA.jpeg"
                       bgColor="bg-white"
                       imageTitle="Franchesska Berry"
                       imageBody="Director"
                       pageUrl="board/franchesska-berry"
                     />
                     <CardFrame
-                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+                      image="/about/nadia.jpeg"
                       bgColor="bg-white"
                       imageTitle="Nivia Nduka"
                       imageBody="Director"
                       pageUrl="board/nivia-nduka"
                     />
                     <CardFrame
-                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+                      image="/about/MWALIMU KABAILA.jpeg"
                       bgColor="bg-white"
                       imageTitle="Mwalimu Kabaila"
                       imageBody="Director"

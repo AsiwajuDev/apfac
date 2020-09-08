@@ -26,14 +26,14 @@ export default function Staff() {
                 <div class="col-span-12 mt-8">
                   <div class="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
                     <CardFrame
-                      image="/about/patrick-durodola.jpeg"
+                      image="/about/PATRICK-DURODOLA.png"
                       bgColor="bg-white"
                       imageTitle="Patrick Durodola"
                       imageBody="Director"
                       pageUrl="staff/patrick-durodola"
                     />
                     <CardFrame
-                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
+                      image="/about/AZUBUIKE-CHINEDUM-OKORONKWO.png"
                       bgColor="bg-white"
                       imageTitle="Azubuike Okoronkwo"
                       imageBody="Director"
