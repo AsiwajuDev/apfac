@@ -58,9 +58,18 @@ export default function Index() {
                   </p>
 
                   <div>
-                    <Frame media="/favicon/media1.jpg" />
-                    <Frame media="/favicon/media2.jpg" />
-                    <Frame media="/favicon/media3.jpg" />
+                    <Frame
+                      media="/favicon/media1.jpg"
+                      className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                    />
+                    <Frame
+                      media="/favicon/media2.jpg"
+                      className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                    />
+                    <Frame
+                      media="/favicon/media3.jpg"
+                      className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                    />
                   </div>
                   <p className="mb-4">
                     <div className="capitalize font-bold text-sm sm:text-lg lg:text-lg mb-1">

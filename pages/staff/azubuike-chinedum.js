@@ -174,7 +174,10 @@ export default function Azubuike() {
                       <div className="border-2 border-red-600 w-16"></div>
                     </div>
                     <div>
-                      <Frame media="/favicon/about1.jpg" />
+                      <Frame
+                        media="/favicon/about1.jpg"
+                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      />
                     </div>
                   </div>
 
@@ -186,7 +189,10 @@ export default function Azubuike() {
                       <div className="border-2 border-red-600 w-16"></div>
                     </div>
                     <div>
-                      <Frame media="/favicon/about1.jpg" />
+                      <Frame
+                        media="/favicon/about1.jpg"
+                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      />
                     </div>
                   </div>
 
@@ -198,7 +204,10 @@ export default function Azubuike() {
                       <div className="border-2 border-red-600 w-16"></div>
                     </div>
                     <div>
-                      <Frame media="/favicon/about3.jpg" />
+                      <Frame
+                        media="/favicon/about3.jpg"
+                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      />
                     </div>
                   </div>
                 </div>

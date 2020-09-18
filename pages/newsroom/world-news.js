@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
+import YoutubeFrame from "../../components/youtubeFrame";
 
 export default function WorldNews() {
   return (
@@ -26,7 +27,10 @@ export default function WorldNews() {
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
                       </p>
-                      <Frame media="/favicon/newsroom2.jpg" />
+                      <Frame
+                        media="/favicon/newsroom2.jpg"
+                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      />
                     </div>
                     <div className="mb-3">
                       <p className="mb-3">
@@ -35,7 +39,10 @@ export default function WorldNews() {
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
                       </p>
-                      <Frame media="/favicon/newsroom2.jpg" />
+                      <Frame
+                        media="/favicon/newsroom2.jpg"
+                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      />
                     </div>
                     <div className="mb-3">
                       <p className="mb-3">
@@ -44,19 +51,27 @@ export default function WorldNews() {
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
                       </p>
-                      <Frame media="/favicon/newsroom3.jpg" />
+                      <Frame
+                        media="/favicon/newsroom3.jpg"
+                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
               <div className="md:w-4/6 lg:w-4/5 my-auto">
                 <div className="mx-6 lg:mx-24">
-                  <p className="capitalize text-white font-bold text-2xl">
+                  <YoutubeFrame
+                    width={500}
+                    height={400}
+                    videoId="863eD7FML_0"
+                  />
+                  {/* <p className="capitalize text-white font-bold text-2xl">
                     Newsroom
                   </p>
                   <p className="text-white text-4xl mx-0 leading-none sm:text-5xl lg:text-6xl font-bold pb-4">
                     watch thousands of news and series on all your devices...
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>

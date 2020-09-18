@@ -26,6 +26,7 @@ export default function SecondEdition() {
                   <Frame
                     mediaTitle="Africa peace festival art and culture 2019"
                     media="/favicon/experience1.jpg"
+                    className="mt-3 mb-1 h-24  w-48 lg:w-40"
                   />
                 </div>
                 <div className="mb-4">
@@ -38,6 +39,7 @@ export default function SecondEdition() {
                   <Frame
                     mediaTitle="Africa peace festival art and culture 2020"
                     media="/favicon/experience2.jpg"
+                    className="mt-3 mb-1 h-24  w-48 lg:w-40"
                   />
                 </div>
               </div>

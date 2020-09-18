@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Frame = ({ media, name, mediaTitle }) => {
+const Frame = ({ media, name, mediaTitle, className }) => {
   return (
     <div className="">
       <div className=" w-48 lg:w-40">
@@ -8,11 +8,7 @@ const Frame = ({ media, name, mediaTitle }) => {
           <div className="box bg-gray-500">
             <Link href="#">
               <a>
-                <img
-                  className="mt-3 mb-1 h-24  w-48 lg:w-40"
-                  src={media}
-                  alt={name}
-                />
+                <img className={className} src={media} alt={name} />
               </a>
             </Link>
           </div>

@@ -23,7 +23,10 @@ export default function Experience() {
                     </div>
                     <div className="border-2 border-red-600 w-16"></div>
                   </p>
-                  <Frame mediaTitle="Africa peace festival art and culture 2019" />
+                  <Frame
+                    mediaTitle="Africa peace festival art and culture 2019"
+                    className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                  />
                 </div>
                 <div className="mb-4">
                   <p className="mb-3">
@@ -32,7 +35,10 @@ export default function Experience() {
                     </div>
                     <div className="border-2 border-red-600 w-16"></div>
                   </p>
-                  <Frame mediaTitle="Africa peace festival art and culture 2019" />
+                  <Frame
+                    mediaTitle="Africa peace festival art and culture 2019"
+                    className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                  />
                 </div>
               </div>
             </div>

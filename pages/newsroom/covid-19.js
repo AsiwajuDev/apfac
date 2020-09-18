@@ -26,7 +26,10 @@ export default function Covid() {
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
                       </p>
-                      <Frame media="/favicon/newsroom2.jpg" />
+                      <Frame
+                        media="/favicon/newsroom2.jpg"
+                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      />
                     </div>
                     <div className="mb-3">
                       <p className="mb-3">
@@ -35,7 +38,10 @@ export default function Covid() {
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
                       </p>
-                      <Frame media="/favicon/newsroom2.jpg" />
+                      <Frame
+                        media="/favicon/newsroom2.jpg"
+                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      />
                     </div>
                     <div className="mb-3">
                       <p className="mb-3">
@@ -44,7 +50,10 @@ export default function Covid() {
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
                       </p>
-                      <Frame media="/favicon/newsroom3.jpg" />
+                      <Frame
+                        media="/favicon/newsroom3.jpg"
+                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      />
                     </div>
                   </div>
                 </div>
