@@ -17,12 +17,12 @@ const LocalNews = ({ posts }) => {
       </Head>
       <div>
         <div
-          className="bg-cover bg-no-repeat bg-top pt-16 pb-24"
+          className="bg-cover bg-no-repeat bg-top"
           style={{ backgroundImage: "url(/favicon/news.jpg)" }}
         >
           <div className="container pl-3 lg:px-10 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center  md:flex-no-wrap md:justify-between md:mx-4 lg:mx-0">
-              <div className="md:w-2/6 lg:w-1/5">
+              <div className="md:w-2/6 lg:w-1/5 py-16 ">
                 <div className="hidden md:block w-56 rounded bg-white overflow-hidden shadow-lg">
                   <div className="px-6 py-4">
                     <div className="mb-3">
@@ -64,8 +64,11 @@ const LocalNews = ({ posts }) => {
                   </div>
                 </div>
               </div>
-              <div className="md:w-4/6 lg:w-4/5 my-auto">
-                <div className="mx-6 lg:mx-20">
+              <div className="md:w-4/6 lg:w-4/5 my-auto py-10">
+                <div className="mx-6">
+                  {/* <p className="capitalize text-white font-bold text-2xl">
+                    Newsroom
+                  </p> */}
                   <div className="col-span-12">
                     <div className="grid grid-cols-12 gap-6">
                       {posts.slice(0, 12).map((p) => (
