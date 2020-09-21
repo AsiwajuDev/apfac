@@ -3,8 +3,12 @@ import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import YoutubeFrame from "../../components/youtubeFrame";
+import NewsCard from "../../components/newsCard";
 
-export default function LocalNews() {
+const LocalNews = ({ posts }) => {
+  console.log("News:" + JSON.stringify(posts.articles));
+  // console.log("News:" + posts.articles);
+
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
       <Head>
@@ -61,11 +65,17 @@ export default function LocalNews() {
               </div>
               <div className="md:w-4/6 lg:w-4/5 my-auto">
                 <div className="mx-6 lg:mx-24">
-                  <YoutubeFrame
+                  <div class="col-span-12 mt-8">
+                    <div class="grid grid-cols-9 gap-6 mt-5">
+                      <NewsCard />
+                      <NewsCard />
+                    </div>
+                  </div>
+                  {/* <YoutubeFrame
                     width={500}
                     height={400}
                     videoId="HIusDPgp4zg"
-                  />
+                  /> */}
 
                   {/* <p className="capitalize text-white font-bold text-2xl">
                     Newsroom
@@ -81,4 +91,14 @@ export default function LocalNews() {
       </div>
     </Layout>
   );
-}
+};
+
+LocalNews.getInitialProps = async () => {
+  const res = await fetch(
+    "http://newsapi.org/v2/top-headlines?country=ng&category=entertainment&apiKey=33fdf48678554c70b4dadf00fca13abb"
+  );
+  const data = await res.json();
+  return { posts: data };
+};
+
+export default LocalNews;

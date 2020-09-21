@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import { SITE_NAME } from "../lib/constants";
-import Frame from "../components/frame";
+import ProductList from "../components/ProductList";
+import Shop from "../components/shop";
 
-export default function Sales() {
+const Sales = ({ products }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -23,26 +24,24 @@ export default function Sales() {
                       sales and payments
                     </p>
                   </div>
-                  {/* <div className="border-l-4 border-red-600 px-4">
-                  <div className="max-w-sm rounded bg-white overflow-hidden shadow-lg">
-                    <div className="px-6 py-4">
-                      <div className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
-                        A Substainable Goal to Grow Together
-                      </div>
-                      <p className="text-gray-700 text-base">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Voluptatibus quia, nulla! Maiores et perferendis
-                        eaque, exercitationem praesentium nihil.
-                      </p>
-                    </div>
+                  <div>
+                    {/* <ProductList products={products} /> */}
+                    {/* <Shop/> */}
                   </div>
-                </div> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <script src="https://cdn.snipcart.com/themes/v3.0.0-beta.4/default/snipcart.js"></script>
+      <div
+        hidden
+        id="snipcart"
+        data-api-key="MzMxN2Y0ODMtOWNhMy00YzUzLWFiNTYtZjMwZTRkZDcxYzM4"
+      ></div>
     </Layout>
   );
-}
+};
+
+export default Sales;
