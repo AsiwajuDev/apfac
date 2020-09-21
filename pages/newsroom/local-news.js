@@ -3,8 +3,10 @@ import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import YoutubeFrame from "../../components/youtubeFrame";
+import fetch from 'isomorphic-unfetch'
+import NewsCard from "../../components/newsCard";
 
-export default function LocalNews() {
+const LocalNews = ({ news }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
       <Head>
@@ -61,24 +63,49 @@ export default function LocalNews() {
               </div>
               <div className="md:w-4/6 lg:w-4/5 my-auto">
                 <div className="mx-6 lg:mx-24">
-                  <YoutubeFrame
+                  <p className="capitalize text-white font-bold text-2xl">
+                    Newsroom
+
+                  </p>
+              
+                </div>
+
+                <div className="mx-6 lg:mx-24 h-64 z-20">
+
+                </div>
+                {/* <YoutubeFrame
                     width={500}
                     height={400}
                     videoId="HIusDPgp4zg"
-                  />
-
-                  {/* <p className="capitalize text-white font-bold text-2xl">
-                    Newsroom
-                  </p>
-                  <p className="text-white text-4xl mx-0 leading-none sm:text-5xl lg:text-6xl font-bold pb-4">
+                  /> */}
+                {/*<p className="text-white text-4xl mx-0 leading-none sm:text-5xl lg:text-6xl font-bold pb-4">
                     watch thousands of news and series on all your devices...
                   </p> */}
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <ol>
+                    {
+                      news.articles.map(news => {
+                        <li key={`News_ ${news.source.name}`}>
+                          <a>{news.title}</a>
+                          </li>,
+                        console.log(news.title)
+                      })
+                    }
+                  </ol>
     </Layout>
-  );
+
+  )
+};
+
+LocalNews.getInitialProps = async () => {
+  const res = await fetch('http://newsapi.org/v2/top-headlines?country=ng&apiKey=33fdf48678554c70b4dadf00fca13abb')
+  console.log(res)
+  const news = await res.json();
+  return { news }
 }
+
+export default LocalNews;
