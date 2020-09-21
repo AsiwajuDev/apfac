@@ -24,8 +24,8 @@ export default function Sponsors() {
                 </p>
               </div>
               <div className="mb-10 mx-6">
-                <div class="col-span-12 mt-8">
-                  <div class="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
+                <div className="col-span-12 mt-8">
+                  <div className="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
                     <ImageFrame
                       className="w-full h-64"
                       imageFull="/about/usapfac.jpeg"

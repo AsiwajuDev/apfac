@@ -4,10 +4,11 @@ import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import YoutubeFrame from "../../components/youtubeFrame";
 import NewsCard from "../../components/newsCard";
+import { useEffect } from "react";
+import moment from "moment";
 
 const LocalNews = ({ posts }) => {
-  console.log("News:" + JSON.stringify(posts.articles));
-  // console.log("News:" + posts.articles);
+  console.log(posts[0].author);
 
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
@@ -49,12 +50,12 @@ const LocalNews = ({ posts }) => {
                       />
                     </div>
                     <div className="mb-3">
-                      <p className="mb-3">
+                      <div className="mb-3">
                         <div className="capitalize font-bold text-sm sm:text-lg lg:text-lg mb-1">
                           World News
                         </div>
                         <div className="border-2 border-red-600 w-16"></div>
-                      </p>
+                      </div>
                       <Frame
                         media="/favicon/newsroom3.jpg"
                         className="mt-3 mb-1 h-24  w-48 lg:w-40"
@@ -64,11 +65,19 @@ const LocalNews = ({ posts }) => {
                 </div>
               </div>
               <div className="md:w-4/6 lg:w-4/5 my-auto">
-                <div className="mx-6 lg:mx-24">
-                  <div class="col-span-12 mt-8">
-                    <div class="grid grid-cols-9 gap-6 mt-5">
-                      <NewsCard />
-                      <NewsCard />
+                <div className="mx-6 lg:mx-20">
+                  <div className="col-span-12">
+                    <div className="grid grid-cols-12 gap-6">
+                      {posts.slice(0, 12).map((p) => (
+                        <NewsCard
+                          key={p.title}
+                          cardTitle={p.title}
+                          cardURL={p.url}
+                          newsDate={moment(p.publishedAt).fromNow()}
+                        />
+                        // <Post key={p.title} post={p} />
+                      ))}
+                      {/* <NewsCard /> */}
                     </div>
                   </div>
                   {/* <YoutubeFrame
@@ -95,10 +104,13 @@ const LocalNews = ({ posts }) => {
 
 LocalNews.getInitialProps = async () => {
   const res = await fetch(
-    "http://newsapi.org/v2/top-headlines?country=ng&category=entertainment&apiKey=33fdf48678554c70b4dadf00fca13abb"
+    "http://newsapi.org/v2/top-headlines?country=ng&apiKey=33fdf48678554c70b4dadf00fca13abb"
   );
+  // const res = await fetch(
+  //   "http://newsapi.org/v2/top-headlines?country=ng&category=entertainment&apiKey=33fdf48678554c70b4dadf00fca13abb"
+  // );
   const data = await res.json();
-  return { posts: data };
+  return { posts: data.articles };
 };
 
 export default LocalNews;

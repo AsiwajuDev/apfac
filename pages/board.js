@@ -23,8 +23,8 @@ export default function Board() {
                 </p>
               </div>
               <div className="mb-10 sm:mx-6 flex justify-center">
-                <div class="col-span-9 mt-8">
-                  <div class="grid grid-cols-12 gap-6 sm:gap-10 mt-5">
+                <div className="col-span-9 mt-8">
+                  <div className="grid grid-cols-12 gap-6 sm:gap-10 mt-5">
                     <CardFrame
                       image="/about/PATRICK-DURODOLA.png"
                       bgColor="bg-white"
