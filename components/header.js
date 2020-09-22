@@ -70,6 +70,17 @@ export default function Header({ fixed, bgImage }) {
                     </li>
                   </ul>
                 </div>
+
+                {/* <Link href="#">
+                  <a>
+                    <img
+                      src="/favicon/sales.png"
+                      className="h-10 sm:h-16 md:h-20 lg:h-24 mt-2 md:mt-4"
+                    />
+                  </a>
+                </Link> */}
+              </div>
+              <div className="flex justify-end">
                 <button className="header__checkout snipcart-checkout">
                   <svg
                     width="31"
@@ -86,14 +97,6 @@ export default function Header({ fixed, bgImage }) {
                   </svg>
                   <span className="snipcart-total-price"></span>
                 </button>
-                {/* <Link href="#">
-                  <a>
-                    <img
-                      src="/favicon/sales.png"
-                      className="h-10 sm:h-16 md:h-20 lg:h-24 mt-2 md:mt-4"
-                    />
-                  </a>
-                </Link> */}
               </div>
             </div>
           </div>

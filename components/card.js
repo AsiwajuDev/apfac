@@ -10,7 +10,7 @@ const Card = ({ cardTitle, mediaTitle, media }) => {
             <p className="capitalize font-semibold text-sm sm:text-base mb-1">
               {cardTitle}
             </p>
-            <div className="border-2 border-red-600 w-16"></div>
+            <div className="border-2 border-red-600 w-16 mb-3"></div>
           </div>
           <Frame mediaTitle={mediaTitle} media={media} />
         </div>

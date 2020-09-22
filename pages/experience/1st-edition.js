@@ -2,8 +2,13 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
+// import ReactBnbGallery from "react-bnb-gallery";
+import { useState } from "react";
 
-export default function FirstEdition() {
+const FirstEdition = ({ images }) => {
+  console.log(images);
+  // const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Layout
       imageUrl={{ backgroundImage: "url(/favicon/experience-header.jpg)" }}
@@ -63,6 +68,14 @@ export default function FirstEdition() {
                           watch the
                           <br /> shows online
                         </p>
+                        {/* <button onClick={() => setIsOpen(true)}>
+                          Open gallery
+                        </button>
+                        <ReactBnbGallery
+                          show={isOpen}
+                          photos={images}
+                          onClose={() => setIsOpen(false)}
+                        /> */}
                       </div>
                     </div>
                   </div>
@@ -87,4 +100,17 @@ export default function FirstEdition() {
       </div>
     </Layout>
   );
-}
+};
+
+FirstEdition.getInitialProps = async () => {
+  const res = await fetch(
+    "https://res.cloudinary.com/christekh/image/list/xmas.json"
+  );
+  // const res = await fetch(
+  //   "http://newsapi.org/v2/top-headlines?country=ng&category=entertainment&apiKey=33fdf48678554c70b4dadf00fca13abb"
+  // );
+  const data = await res.json();
+  return { images: data.resources };
+};
+
+export default FirstEdition;

@@ -14,7 +14,7 @@ export default function NavBar() {
             <i className="fa fa-caret-down text-white" aria-hidden="true"></i>
           </span>
           <ul
-            className="bg-black bg-opacity-50 z-10 py-2 text-white rounded-full scale-0 group-hover:scale-100 absolute 
+            className="bg-black bg-opacity-50 py-2 z-50 text-white rounded-full scale-0 group-hover:scale-100 absolute 
                   transition duration-150 origin-top"
           >
             <li className="relative py-1">
@@ -50,13 +50,13 @@ export default function NavBar() {
 
         <div className="text-white mb-3">
           <div className="dropdown inline-block relative">
-            <a className="bg-transparent border border-white hover:border-red-500 font-semibold py-2 w-32 justify-center rounded-full inline-flex items-center">
+            <a className="bg-transparent border border-white hover:border-red-500 font-semibold py-2 w-32 justify-center z-50 rounded-full inline-flex items-center">
               <span className="mr-1">Who we are</span>
             </a>
             <span className="px-2">
               <i className="fa fa-caret-down" aria-hidden="true"></i>
             </span>
-            <ul className="dropdown-menu z-20 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
+            <ul className="dropdown-menu z-50 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
               <li className="">
                 <Link href="/about">
                   <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
@@ -104,7 +104,7 @@ export default function NavBar() {
             <span className="px-2">
               <i className="fa fa-caret-down" aria-hidden="true"></i>
             </span>
-            <ul className="dropdown-menu z-20 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
+            <ul className="dropdown-menu z-50 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
               <li className="">
                 <Link href="/newsroom/african-news">
                   <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 pr-8 block whitespace-no-wrap">
@@ -145,7 +145,7 @@ export default function NavBar() {
             <span className="px-2">
               <i className="fa fa-caret-down" aria-hidden="true"></i>
             </span>
-            <ul className="dropdown-menu z-20 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
+            <ul className="dropdown-menu z-50 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
               <li className="">
                 <Link href="/experience/1st-edition">
                   <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
@@ -179,7 +179,7 @@ export default function NavBar() {
             <span className="px-2">
               <i className="fa fa-caret-down" aria-hidden="true"></i>
             </span>
-            <ul className="dropdown-menu z-20 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
+            <ul className="dropdown-menu z-50 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
               <li className="">
                 <Link href="/gallery/1st-edition-pictures">
                   <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
