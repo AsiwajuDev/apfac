@@ -8,7 +8,6 @@ export default function Index() {
     <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
       <Head>
         <title>{SITE_NAME}</title>
-        
       </Head>
       <div>
         <div

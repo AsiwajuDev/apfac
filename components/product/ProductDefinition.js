@@ -13,7 +13,7 @@ const ProductDefinition = ({price, id, productName, imageUrl}) => {
       data-item-image={imageUrl}
       data-item-custom2-options="4x6|6x9[+7.50]|9x12[+15.00]|20x20[+40.00]"
       data-item-custom2-name="size"
-      data-item-url={localURL}//"https://snipcart-nextjs-seo.netlify.com/"
+      data-item-url={baseUrl}//"https://snipcart-nextjs-seo.netlify.com/"
     >
       Add to cart
     </button>

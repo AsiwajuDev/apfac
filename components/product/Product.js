@@ -14,7 +14,6 @@ const Product = ({
     <div className="col-span-12 sm:col-span-3 xl:col-span-3 intro-y">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <div className="bg-white">
-          
             <a>
               <img className="w-full h-64" src={imageUrl} alt={imageUrl} />
             </a>
