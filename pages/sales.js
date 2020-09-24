@@ -8,39 +8,39 @@ import Product from "../components/product/Product";
 const productss = [
   {
     id: "Product 1",
-    // productName: "Product 1",
+    productName: "Product 1",
     imageUrl: "/product/product1.jpeg",
-    price: 10.0,
+    price: 10.00,
   },
   {
     id: "Product 2",
-    // productName: "Product 2",
+     productName: "Product 2",
     imageUrl: "/product/product2.jpeg",
-    price: 10.0,
+    price: 10.00,
   },
   {
     id: "Product 3",
-    // productName: "Product 3",
+    productName: "Product 3",
     imageUrl: "/product/product3.jpeg",
-    price: 15.0,
+    price: 15.00,
   },
   {
     id: "Product 3",
-    // productName: "Product 4",
+    productName: "Product 4",
     imageUrl: "/product/product4.jpeg",
-    price: 7.0,
+    price: 7.00,
   },
   {
     id: 5,
-    // productName: "Product 5",
+    productName: "Product 5",
     imageUrl: "/product/product5.jpeg",
-    price: 10.0,
+    price: 10.00,
   },
   {
     id: 6,
-    // productName: "Product 5",
+    productName: "Product 5",
     imageUrl: "/product/product6.jpeg",
-    price: 8.0,
+    price: 8.00,
   },
 ];
 const Sales = ({ products }) => {
@@ -49,16 +49,9 @@ const Sales = ({ products }) => {
       <Head>
         <title>{SITE_NAME}</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        <script
-          src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
-          data-api-key="MzMxN2Y0ODMtOWNhMy00YzUzLWFiNTYtZjMwZTRkZDcxYzM4"
-          id="snipcart"
-        ></script>
-        <link
-          href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css"
-          rel="stylesheet"
-          type="text/css"
-        />
+        <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="MzMxN2Y0ODMtOWNhMy00YzUzLWFiNTYtZjMwZTRkZDcxYzM4" id="snipcart"></script>
+        <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="/static/favicon.ico" />
       </Head>
       <div>
         <div
@@ -84,12 +77,12 @@ const Sales = ({ products }) => {
           </div>
         </div>
       </div>
-      <script src="https://cdn.snipcart.com/themes/v3.0.0-beta.4/default/snipcart.js"></script>
-      <div
+      {/* <script src="https://cdn.snipcart.com/themes/v3.0.0-beta.4/default/snipcart.js"></script> */}
+      {/* <div
         hidden
         id="snipcart"
         data-api-key="MzMxN2Y0ODMtOWNhMy00YzUzLWFiNTYtZjMwZTRkZDcxYzM4"
-      ></div>
+      ></div> */}
     </Layout>
   );
 };

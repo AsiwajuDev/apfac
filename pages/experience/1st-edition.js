@@ -6,7 +6,7 @@ import Frame from "../../components/frame";
 import { useState } from "react";
 
 const FirstEdition = ({ images }) => {
-  console.log(images);
+ 
   // const [isOpen, setIsOpen] = useState(false);
 
   return (

@@ -79,6 +79,7 @@ export default function Index() {
                   <div>{/* <Frame media="/favicon/media1.jpg" /> */}</div>
                 </div>
               </div>
+              
               {/* <div className="justify-end"></div> */}
             </div>
           </div>

@@ -1,19 +1,19 @@
-let localURL = "http://localhost:5000/";
+let localURL = "http://localhost:5000/sales";
 let prodURL = "https://apfac.netlify.app/";
 
 let baseUrl = process.env.NODE_ENV === "production" ? prodURL : localURL;
 
-const ProductDefinition = ({ price, id, productName, imageUrl }) => {
+const ProductDefinition = ({price, id, productName, imageUrl}) => {
   return (
     <button
-      className="snipcart-add-item product-definition product__button text-xl font-semibold px-5 py-2"
+      className="snipcart-add-item product-definition product__button"
       data-item-id={id}
-      data-item-name={productName}
+      data-item-name="Product"//{productName}
       data-item-price={price}
-      data-item-image={imageUrl}
+      data-item-image={imageUrl} 
       // data-item-custom2-options="4x6|6x9[+7.50]|9x12[+15.00]|20x20[+40.00]"
       // data-item-custom2-name="size"
-      data-item-url={baseUrl} //"https://snipcart-nextjs-seo.netlify.com/"
+      data-item-url={baseUrl}//"https://snipcart-nextjs-seo.netlify.com/"
     >
       Add to cart
     </button>
