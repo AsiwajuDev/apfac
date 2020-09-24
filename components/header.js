@@ -95,7 +95,7 @@ export default function Header({ fixed, bgImage }) {
                       className="header__checkout-fill"
                     ></path>
                   </svg>
-                  <span className="snipcart-total-price"></span>
+                  {/* <span className="snipcart-total-price"></span> */}
                 </button>
               </div>
             </div>

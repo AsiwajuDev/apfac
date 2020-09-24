@@ -19,9 +19,9 @@ const Product = ({ id, imageUrl, price, productName }) => {
           </a>
 
           <div className="px-6 pb-4 text-center ">
-            {/* <div className="font-semibold capitalize text-green-400 text-xl">
+            <div className="font-semibold capitalize text-green-400 text-xl">
               {productName}
-            </div> */}
+            </div>
             <div className="sm:flex-auto">
               <p className="text-red-700 font-bold text-4xl">${price}</p>
               <ProductDefinition {...product} />
