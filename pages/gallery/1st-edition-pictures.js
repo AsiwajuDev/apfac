@@ -12,8 +12,7 @@ const fetcher = async function (...args) {
   return res.json();
 };
 
-const FirstEditionPicture = (images) => {
- 
+const FirstEditionPicture = () => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
       <Head>
@@ -36,12 +35,13 @@ const FirstEditionPicture = (images) => {
               </div>
               <div className="mb-10 mx-6">
                 <div className="col-span-12 mt-8">
-                  
-                    <Gallery images={images.images} />
-                    {/* <Card
+                  {/* <Gallery images={images.images} /> */}
+                  <div className="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
+                    <Card
                       cardTitle="1st Edition Pictures"
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery1.jpg"
+                      mediaUrl="gallery/1st-edition-pictures/gallery"
                     />
                     <Card
                       cardTitle="Seminar"
@@ -57,8 +57,8 @@ const FirstEditionPicture = (images) => {
                       cardTitle="2020 Programme"
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery4.jpg"
-                    /> */}
-                   
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -67,18 +67,6 @@ const FirstEditionPicture = (images) => {
       </div>
     </Layout>
   );
-}
-
-FirstEditionPicture.getInitialProps = async () => {
-  const url = `https://res.cloudinary.com/dxwzdkhyb/image/list/1stedition.json`;
-  const res = await fetcher(url);
-  // axios.get(url)
-  //           .then(res => {
-  //               console.log(res.data.resources);
-  //               //this.setState({gallery: res.data.resources});
-  //           });
-  console.log(JSON.stringify(res.data))
-  return { images: res.resources};
 };
 
 export default FirstEditionPicture;

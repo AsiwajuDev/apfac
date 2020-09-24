@@ -70,7 +70,7 @@ body,
   margin-right: 8px;
 }
 .header__checkout-fill {
-  fill: #4abdac;
+  fill: #e53e3e;
 }
 
 .main {
@@ -175,9 +175,9 @@ body,
 .product-definition {
   all: unset;
   color: white;
-  background-color: #4abdac;
-  border: 1px solid #42b6a4;
-  text-shadow: 2px 2px 5px #42b6a4;
+  background-color: #e53e3e;
+  border: 1px solid #e53e3e;
+  text-shadow: 2px 2px 5px #e53e3e;
   border-radius: 3px;
   font-weight: bold;
   text-transform: uppercase;
@@ -192,7 +192,7 @@ body,
 }
 .product-definition:hover {
   transition: 0.2s all;
-  background-color: #399b8d;
+  background-color: #e53e3e;
 }
 .product-definition:hover:before {
   transform: scale(1.1, 1.5);
@@ -200,7 +200,7 @@ body,
 .product-definition:before {
   content: " ";
   position: absolute;
-  background-color: #4abdac;
+  background-color: #e53e3e;
   top: 0;
   left: 0;
   border-radius: 4px;

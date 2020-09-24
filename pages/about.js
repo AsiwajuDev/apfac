@@ -4,10 +4,10 @@ import { SITE_NAME } from "../lib/constants";
 import Frame from "../components/frame";
 
 export default function About() {
-  fetch("https://test.usapfac.org/wp-json/wp/v2/posts")
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));
+  // fetch("https://test.usapfac.org/wp-json/wp/v2/posts")
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data))
+  //   .catch((err) => console.log(err));
 
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
