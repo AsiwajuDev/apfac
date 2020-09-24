@@ -39,7 +39,12 @@ const productss = [
 const Sales = ({ products }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
-      
+      <Head>
+        <title>{SITE_NAME}</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="MzMxN2Y0ODMtOWNhMy00YzUzLWFiNTYtZjMwZTRkZDcxYzM4" id="snipcart"></script>
+        <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
+      </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat"

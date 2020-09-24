@@ -5,13 +5,10 @@ import Frame from "../components/frame";
 
 export default function Index() {
   return (
-    <div>
-      <Head>
-        <title>{SITE_NAME}</title>
-        
-      </Head>
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
+    
       
+    <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
+    
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
@@ -88,6 +85,6 @@ export default function Index() {
         </div>
       </div>
     </Layout>
-    </div>
+    
   );
 }
