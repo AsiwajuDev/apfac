@@ -69,7 +69,7 @@ const Sales = ({ products }) => {
               <div className="flex flex-wrap justify-center">
                 <div className="mb-4">
                   <div className="mx-6 mb-6">
-                    <p className="text-white text-5xl leading-none sm:text-6xl font-bold pb-4">
+                    <p className="text-white text-center text-5xl leading-none sm:text-6xl font-bold">
                       sales and payments
                     </p>
                   </div>
