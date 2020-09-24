@@ -13,7 +13,7 @@ const fetcher = async function (...args) {
 };
 
 const FirstEditionPicture = (images) => {
-  console.log(JSON.stringify(images.images))
+ 
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
       <Head>
@@ -58,7 +58,7 @@ const FirstEditionPicture = (images) => {
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery4.jpg"
                     /> */}
-                  
+                   
                 </div>
               </div>
             </div>
