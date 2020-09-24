@@ -21,7 +21,7 @@ const FirstEditionPicture = (images) => {
       </Head>
       <div>
         <div
-          className="bg-cover bg-no-repeat bg-top pt-28 pb-2"
+          className="bg-cover bg-no-repeat bg-top pt-32 pb-2"
           style={{ backgroundImage: "url(/favicon/gallery.jpg)" }}
         >
           <div className="container lg:mx-auto">
