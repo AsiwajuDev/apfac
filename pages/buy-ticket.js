@@ -1,5 +1,5 @@
 import Head from "next/head";
-import StripeCheckout from 'react-stripe-checkout';
+import StripeCheckout from "react-stripe-checkout";
 import fetch from "isomorphic-unfetch";
 import { PayPalButton } from "react-paypal-button-v2";
 
@@ -12,15 +12,15 @@ const price = 200 * 100;
 
 const BuyTicket = () => {
   const onToken = (token) => {
-    fetch('/save-stripe-token', {
-      method: 'POST',
+    fetch("/save-stripe-token", {
+      method: "POST",
       body: JSON.stringify(token),
-    }).then(response => {
-      response.json().then(data => {
+    }).then((response) => {
+      response.json().then((data) => {
         alert(`We are in business, ${data.email}`);
       });
     });
-  }
+  };
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -29,7 +29,10 @@ const BuyTicket = () => {
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
-          style={{ backgroundImage: "url(/favicon/ticket-banner.jpg)", height: 500 }}
+          style={{
+            backgroundImage: "url(/favicon/ticket-banner.jpg)",
+            height: 500,
+          }}
         >
           <div className="container px-5 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
@@ -123,21 +126,19 @@ const BuyTicket = () => {
                       ComponentClass="div"
                       token={onToken}
                       stripeKey="pk_test_sLUqHXtqXOkwSdPosC8ZikQ800snMatYMb"
-
-                      label='Pay Now'
-                      name='apfac'
+                      label="Pay Now"
+                      name="apfac"
                       billingAddress
                       shippingAddress
-                      // image='https://www.freakyjolly.com/wp-content/uploads/2020/04/fj-logo.png'
+                      image="/favicon/logo.png"
                       description={`Your total is ${price}`}
                       amount={price}
-                      panelLabel='Pay Now' >
-
+                      panelLabel="Pay Now"
+                    >
                       <Button
                         buttonText="buy ticket"
                         className="w-full uppercase bg-red-600 py-3 text-center text-white font-semibold"
                       />
-
                     </StripeCheckout>
                   </div>
                 </div>
@@ -150,6 +151,6 @@ const BuyTicket = () => {
       </div>
     </Layout>
   );
-}
+};
 
 export default BuyTicket;

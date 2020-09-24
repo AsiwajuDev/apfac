@@ -16,7 +16,7 @@ const CardFrame = ({
         <div className={bgColor}>
           <Link href={`/${pageUrl}`}>
             <a>
-              <img className="w-full h-64" src={image} alt={imageName} />
+              <img className="w-full h-66" src={image} alt={imageName} />
             </a>
           </Link>
           <div className="px-6 py-4 text-center">
