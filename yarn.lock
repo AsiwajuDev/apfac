@@ -3528,6 +3528,14 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
+isomorphic-unfetch@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/isomorphic-unfetch/-/isomorphic-unfetch-3.0.0.tgz#de6d80abde487b17de2c400a7ef9e5ecc2efb362"
+  integrity sha512-V0tmJSYfkKokZ5mgl0cmfQMTb7MLHsBMngTkbLY0eXvKqiVRRoZP04Ly+KhKrJfKtzC9E6Pp15Jo+bwh7Vi2XQ==
+  dependencies:
+    node-fetch "^2.2.0"
+    unfetch "^4.0.0"
+
 isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
@@ -4146,6 +4154,11 @@ node-fetch@2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
   integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+
+node-fetch@^2.2.0:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-gyp@^3.8.0:
   version "3.8.0"
@@ -4940,6 +4953,14 @@ react-is@16.13.1, react-is@^16.13.1, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-paypal-button-v2@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/react-paypal-button-v2/-/react-paypal-button-v2-2.6.2.tgz#6827b3d16609a44c7a41a69cda223b2da96beaed"
+  integrity sha512-+IgmfbKRdlfopX8YHfPcCrbuQnaA4mCRPQV3VbFXVHDOEiEHvROJ8arQc/JTa1ppRc95u/SweKeVRK1c65JWqA==
+  dependencies:
+    prop-types "^15.7.2"
+    rimraf "^3.0.0"
+
 react-portal@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/react-portal/-/react-portal-4.2.1.tgz#12c1599238c06fb08a9800f3070bea2a3f78b1a6"
@@ -4960,6 +4981,11 @@ react-responsive-carousel@^3.2.9:
     classnames "^2.2.5"
     prop-types "^15.5.8"
     react-easy-swipe "^0.0.18"
+
+react-stripe-checkout@^2.6.3:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/react-stripe-checkout/-/react-stripe-checkout-2.6.3.tgz#3173a870b04e5a3c321a06d24cd53c6030111c45"
+  integrity sha1-MXOocLBOWjwyGgbSTNU8YDARHEU=
 
 react-swipeable@^5.2.0:
   version "5.5.1"
@@ -5236,6 +5262,13 @@ rimraf@2, rimraf@^2.5.4, rimraf@^2.6.3, rimraf@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.7.1.tgz#35797f13a7fdadc566142c29d4f07ccad483e3ec"
   integrity sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
+  dependencies:
+    glob "^7.1.3"
+
+rimraf@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
+  integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   dependencies:
     glob "^7.1.3"
 
@@ -6031,6 +6064,11 @@ typescript@^3.6.2:
   version "3.9.7"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
   integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
+
+unfetch@^4.0.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/unfetch/-/unfetch-4.1.0.tgz#6ec2dd0de887e58a4dee83a050ded80ffc4137db"
+  integrity sha512-crP/n3eAPUJxZXM9T80/yv0YhkTEx2K1D3h7D1AJM6fzsWZrxdyRuLN0JH/dkZh1LNH8LxCnBzoPFCPbb2iGpg==
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"

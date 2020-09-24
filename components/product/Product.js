@@ -33,4 +33,4 @@ const Product = ({
   );
 };
 
-export default withRouter(Product);
+export default Product;
