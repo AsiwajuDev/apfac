@@ -70,12 +70,7 @@ const GalleryImage = (images) => {
 GalleryImage.getInitialProps = async () => {
   const url = `https://res.cloudinary.com/dxwzdkhyb/image/list/1stedition.json`;
   const res = await fetcher(url);
-  // axios.get(url)
-  //           .then(res => {
-  //               console.log(res.data.resources);
-  //               //this.setState({gallery: res.data.resources});
-  //           });
-  console.log(JSON.stringify(res.data));
+
   return { images: res.resources };
 };
 

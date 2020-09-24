@@ -4,6 +4,7 @@ import { SITE_NAME } from "../lib/constants";
 import ProductList from "../components/product/ProductList";
 import Shop from "../components/shop";
 import Product from "../components/product/Product";
+
 const productss = [
   {
     id: "Product 1",

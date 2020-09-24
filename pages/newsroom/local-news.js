@@ -2,10 +2,16 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
+import fetch from "isomorphic-unfetch";
 import YoutubeFrame from "../../components/youtubeFrame";
 import NewsCard from "../../components/newsCard";
 import { useEffect } from "react";
 import moment from "moment";
+
+const fetcher = async function (...args) {
+  const res = await fetch(...args);
+  return res.json();
+};
 
 const LocalNews = ({ posts }) => {
   console.log(posts[0].author);
@@ -83,18 +89,6 @@ const LocalNews = ({ posts }) => {
                       {/* <NewsCard /> */}
                     </div>
                   </div>
-                  {/* <YoutubeFrame
-                    width={500}
-                    height={400}
-                    videoId="HIusDPgp4zg"
-                  /> */}
-
-                  {/* <p className="capitalize text-white font-bold text-2xl">
-                    Newsroom
-                  </p>
-                  <p className="text-white text-4xl mx-0 leading-none sm:text-5xl lg:text-6xl font-bold pb-4">
-                    watch thousands of news and series on all your devices...
-                  </p> */}
                 </div>
               </div>
             </div>
@@ -106,14 +100,10 @@ const LocalNews = ({ posts }) => {
 };
 
 LocalNews.getInitialProps = async () => {
-  const res = await fetch(
-    "http://newsapi.org/v2/top-headlines?country=ng&apiKey=33fdf48678554c70b4dadf00fca13abb"
-  );
-  // const res = await fetch(
-  //   "http://newsapi.org/v2/top-headlines?country=ng&category=entertainment&apiKey=33fdf48678554c70b4dadf00fca13abb"
-  // );
-  const data = await res.json();
-  return { posts: data.articles };
+  const url = `http://newsapi.org/v2/top-headlines?country=ng&apiKey=33fdf48678554c70b4dadf00fca13abb`;
+  const res = await fetcher(url);
+
+  return { posts: res.articles };
 };
 
 export default LocalNews;
