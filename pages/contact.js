@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import InputField from "../components/InputField";
+import InputTextArea from "../components/inputTextArea";
 import Layout from "../components/layout";
 import { SITE_NAME } from "../lib/constants";
 
@@ -30,11 +31,11 @@ export default function Contact() {
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2">
-                <div className="max-w-sm sm:max-w-md bg-opacity-75 z-10 py-2 text-white rounded overflow-hidden shadow-lg">
+                <div className="max-w-md sm:max-w-3xl bg-opacity-75 z-10 py-2 text-white rounded overflow-hidden shadow-lg">
                   <div className="px-6 py-4">
-                    <form className="w-full max-w-lg">
+                    <form className="w-full">
                       <div className="flex flex-wrap -mx-3 mb-3">
-                        <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0">
+                        <div className="w-full md:w-1/3 px-3 mb-3 md:mb-0">
                           <label
                             className="block capitalize tracking-wide text-white text-xs font-semibold mb-2"
                             htmlFor="grid-first-name"
@@ -42,46 +43,46 @@ export default function Contact() {
                             Name
                           </label>
                           <InputField
-                            className="appearance-none block w-full text-gray-700 bg-black bg-opacity-50 border border-gray-200 opacity-50 rounded p-2 leading-tight focus:outline-none focus:bg-black"
+                            className="appearance-none block w-full text-white bg-black bg-opacity-50 border border-gray-200 opacity-50 rounded p-2 leading-tight focus:outline-none focus:bg-black"
                             id="grid-first-name"
                             type="text"
                           />
                         </div>
-                        <div className="w-full md:w-1/2 px-3">
+                        <div className="w-full md:w-1/3 px-3">
                           <label className="block capitalize tracking-wide text-white text-xs font-semibold mb-2">
                             Email
                           </label>
                           <InputField
-                            className="appearance-none block w-full bg-black bg-opacity-50 border border-gray-200 opacity-50 text-gray-700 rounded p-2 leading-tight focus:outline-none focus:bg-black"
+                            className="appearance-none block w-full bg-black bg-opacity-50 border border-gray-200 opacity-50 text-white rounded p-2 leading-tight focus:outline-none focus:bg-black"
                             type="email"
                           />
                         </div>
-                      </div>
-                      <div className="flex flex-wrap -mx-3 mb-3">
-                        <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0">
+                        <div className="w-full md:w-1/3 px-3 mb-3 md:mb-0">
                           <label className="block capitalize tracking-wide text-white text-xs font-semibold mb-2">
                             Subject
                           </label>
                           <InputField
-                            className="appearance-none block w-full text-gray-700 bg-black bg-opacity-50 border border-gray-200 opacity-50 rounded p-2 leading-tight focus:outline-none focus:bg-black"
+                            className="appearance-none block w-full text-white bg-black bg-opacity-50 border border-gray-200 opacity-50 rounded p-2 leading-tight focus:outline-none focus:bg-black"
                             type="text"
                           />
                         </div>
-                        <div className="w-full md:w-1/2 px-3">
+                      </div>
+                      <div className="flex flex-wrap -mx-3 mb-3">
+                        <div className="w-full px-3">
                           <label
                             className="block capitalize tracking-wide text-white text-xs font-semibold mb-2"
                             htmlFor="grid-last-name"
                           >
-                            City
+                            Message
                           </label>
-                          <InputField
-                            className="appearance-none block w-full bg-black bg-opacity-50 border border-gray-200 opacity-50 text-gray-700 rounded p-2 leading-tight focus:outline-none focus:bg-black"
+                          <InputTextArea
+                            className="appearance-none h-48 block w-full bg-black bg-opacity-50 border border-gray-200 opacity-50 text-white rounded p-2 leading-tight focus:outline-none focus:bg-black"
                             id="grid-last-name"
                             type="text"
                           />
                         </div>
                       </div>
-                      <div className="flex flex-wrap -mx-3 mb-3">
+                      {/* <div className="flex flex-wrap -mx-3 mb-3">
                         <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0">
                           <label className="block capitalize tracking-wide text-white text-xs font-semibold mb-2">
                             State
@@ -104,20 +105,23 @@ export default function Contact() {
                             type="text"
                           />
                         </div>
-                      </div>
+                      </div> */}
                     </form>
                   </div>
                 </div>
-                <div className="text-white">
+                <div className="text-white mx-auto mt-5">
                   <div className="mb-5">
-                    <label className="block text-2xl">Email</label>
-                    <a href="mailto:info@usapfac.org" className="text-white">
+                    <label className="block text-3xl">Email</label>
+                    <a
+                      href="mailto:info@usapfac.org"
+                      className="text-white text-lg"
+                    >
                       info@usapfac.org
                     </a>
                   </div>
                   <div>
-                    <label className="block text-2xl">Phone</label>
-                    <a href="tel:+678 887 7619" className="text-white">
+                    <label className="block text-3xl">Phone</label>
+                    <a href="tel:+678 887 7619" className="text-white text-lg">
                       +678 887 7619
                     </a>
                   </div>
