@@ -1,10 +1,19 @@
 import Head from "next/head";
+import fetch from "isomorphic-unfetch";
+
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import Card from "../../components/card";
+import Gallery from "./cloudinary/Gallery";
 
-export default function FirstEditionPicture() {
+const fetcher = async function (...args) {
+  const res = await fetch(...args);
+  return res.json();
+};
+
+const FirstEditionPicture = (images) => {
+  console.log(JSON.stringify(images.images))
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
       <Head>
@@ -12,7 +21,7 @@ export default function FirstEditionPicture() {
       </Head>
       <div>
         <div
-          className="bg-cover bg-no-repeat bg-top pt-32 pb-2"
+          className="bg-cover bg-no-repeat bg-top pt-28 pb-2"
           style={{ backgroundImage: "url(/favicon/gallery.jpg)" }}
         >
           <div className="container lg:mx-auto">
@@ -27,8 +36,9 @@ export default function FirstEditionPicture() {
               </div>
               <div className="mb-10 mx-6">
                 <div className="col-span-12 mt-8">
-                  <div className="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
-                    <Card
+                  
+                    <Gallery images={images.images} />
+                    {/* <Card
                       cardTitle="1st Edition Pictures"
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery1.jpg"
@@ -47,8 +57,8 @@ export default function FirstEditionPicture() {
                       cardTitle="2020 Programme"
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery4.jpg"
-                    />
-                  </div>
+                    /> */}
+                  
                 </div>
               </div>
             </div>
@@ -58,3 +68,17 @@ export default function FirstEditionPicture() {
     </Layout>
   );
 }
+
+FirstEditionPicture.getInitialProps = async () => {
+  const url = `https://res.cloudinary.com/dxwzdkhyb/image/list/1stedition.json`;
+  const res = await fetcher(url);
+  // axios.get(url)
+  //           .then(res => {
+  //               console.log(res.data.resources);
+  //               //this.setState({gallery: res.data.resources});
+  //           });
+  console.log(JSON.stringify(res.data))
+  return { images: res.resources};
+};
+
+export default FirstEditionPicture;
