@@ -6,7 +6,7 @@ const Gallery = ({images}) => {
        
         <CloudinaryContext cloudName="dxwzdkhyb" className="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
             {
-                images.map(data => {
+                images && images.map(data => {
                     return (
                         
                         <div className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y" key={data.public_id}>
