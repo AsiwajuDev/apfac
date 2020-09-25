@@ -1,7 +1,7 @@
-export default function Button({ className, onSubmit, buttonText }) {
+export default function Button({ className, onSubmit, buttonText, type }) {
   return (
     <div>
-      <button onClick={onSubmit} className={className}>
+      <button onClick={onSubmit} type={type} className={className}>
         {buttonText}
       </button>
     </div>

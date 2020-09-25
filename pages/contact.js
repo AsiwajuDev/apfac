@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Button from "../components/button";
 import InputField from "../components/InputField";
 import InputTextArea from "../components/inputTextArea";
@@ -7,9 +8,13 @@ import Layout from "../components/layout";
 import { SITE_NAME } from "../lib/constants";
 
 export default function Contact() {
-  const onSubmit = (event) => {
-    event.preventDefault();
-  };
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    if (window.location.search.includes("success=true")) {
+      setSuccess(true);
+    }
+  }, []);
 
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/contact-header.jpg)" }}>
@@ -38,37 +43,59 @@ export default function Contact() {
               <div class="grid grid-cols-1 sm:grid-cols-2">
                 <div className="max-w-md sm:max-w-3xl bg-white bg-opacity-75 z-10 py-2 text-black rounded overflow-hidden shadow-lg">
                   <div className="px-6 py-4">
-                    <form className="w-full">
+                    <form
+                      name="contact"
+                      method="POST"
+                      action="/?success=true"
+                      data-netlify="true"
+                      className="w-full"
+                    >
+                      {success && (
+                        <p className="text-green-600">
+                          Successfully submitted form!
+                        </p>
+                      )}
                       <div className="flex flex-wrap -mx-3 mb-3">
                         <div className="w-full md:w-1/3 px-3 mb-3 md:mb-0">
                           <label
                             className="block capitalize tracking-wide text-black text-xs font-semibold mb-2"
-                            htmlFor="grid-first-name"
+                            htmlFor="name"
                           >
                             Name
                           </label>
                           <InputField
                             className="block w-full border border-black text-black rounded p-2 leading-tight"
-                            id="grid-first-name"
                             type="text"
+                            name="name"
+                            id="name"
                           />
                         </div>
                         <div className="w-full md:w-1/3 px-3">
-                          <label className="block capitalize tracking-wide text-black text-xs font-semibold mb-2">
+                          <label
+                            className="block capitalize tracking-wide text-black text-xs font-semibold mb-2"
+                            htmlFor="email"
+                          >
                             Email
                           </label>
                           <InputField
                             className="block w-full border border-black text-black rounded p-2 leading-tight"
                             type="email"
+                            name="email"
+                            id="email"
                           />
                         </div>
                         <div className="w-full md:w-1/3 px-3 mb-3 md:mb-0">
-                          <label className="block capitalize tracking-wide text-xs text-black font-semibold mb-2">
+                          <label
+                            className="block capitalize tracking-wide text-xs text-black font-semibold mb-2"
+                            htmlFor="subject"
+                          >
                             Subject
                           </label>
                           <InputField
                             className="block w-full border border-black text-black rounded p-2 leading-tight"
                             type="text"
+                            name="subject"
+                            id="subject"
                           />
                         </div>
                       </div>
@@ -76,7 +103,7 @@ export default function Contact() {
                         <div className="w-full px-3">
                           <label
                             className="block capitalize tracking-wide text-black text-xs font-semibold mb-2"
-                            htmlFor="grid-last-name"
+                            htmlFor="message"
                           >
                             Message
                           </label>
@@ -84,13 +111,16 @@ export default function Contact() {
                             className="h-48 block w-full border border-black text-black rounded p-2 leading-tight"
                             id="grid-last-name"
                             type="text"
+                            name="message"
+                            id="message"
                           />
                         </div>
                       </div>
 
                       <Button
                         buttonText="send"
-                        onSubmit={onSubmit}
+                        // onSubmit={onSubmit}
+                        type="submit"
                         className="uppercase rounded-sm w-40 bg-red-600 py-3 text-center text-white font-semibold"
                       />
                       {/* <div className="flex flex-wrap -mx-3 mb-3">
