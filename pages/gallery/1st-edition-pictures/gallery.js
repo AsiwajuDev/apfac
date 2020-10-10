@@ -20,10 +20,7 @@ const GalleryImage = (images) => {
         <title>{SITE_NAME}</title>
       </Head>
       <div>
-        <div
-          className="bg-cover bg-no-repeat bg-top pt-32 pb-2 bg-gray-800"
-          //   style={{ backgroundImage: "url(/favicon/gallery.jpg)" }}
-        >
+        <div className="bg-cover bg-no-repeat bg-top pt-32 pb-2 bg-gray-800">
           <div className="container lg:mx-auto">
             <div className="sm:mx-20 md:mx-4 lg:mx-0">
               <div className="flex justify-between mx-4">
@@ -35,7 +32,7 @@ const GalleryImage = (images) => {
                     africa alive!
                   </p>
                 </div>
-                <div onClick={() => router.back()}>
+                <div onClick={() => router.back}>
                   <span className="capitalize cursor-pointer hover:text-red-600 text-base text-white italic sm:text-2xl">
                     <i class="fa fa-chevron-left"></i>
                     <span className="px-2">Back</span>
