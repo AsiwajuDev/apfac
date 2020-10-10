@@ -35,11 +35,8 @@ const GalleryImage = (images) => {
                     africa alive!
                   </p>
                 </div>
-                <div>
-                  <span
-                    className="capitalize cursor-pointer hover:text-red-600 text-base text-white italic sm:text-2xl"
-                    onClick={() => router.back()}
-                  >
+                <div onClick={() => router.back()}>
+                  <span className="capitalize cursor-pointer hover:text-red-600 text-base text-white italic sm:text-2xl">
                     <i class="fa fa-chevron-left"></i>
                     <span className="px-2">Back</span>
                   </span>
