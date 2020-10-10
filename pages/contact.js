@@ -46,7 +46,7 @@ export default function Contact() {
                     <form
                       name="contact"
                       method="POST"
-                      // action="?success=true"
+                      action="?success=true"
                       data-netlify="true"
                       className="w-full"
                     >

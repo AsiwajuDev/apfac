@@ -4,7 +4,22 @@ import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import YoutubeFrame from "../../components/youtubeFrame";
 
+const _onReady = (event) => {
+  // access to player in all event handlers via event.target
+  // event.target.pauseVideo();
+  alert("play");
+  event.target.play();
+};
+
 export default function WorldNews() {
+  const opts = {
+    height: "400",
+    width: "500",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
       <Head>
@@ -62,9 +77,11 @@ export default function WorldNews() {
               <div className="md:w-4/6 lg:w-4/5 my-auto">
                 <div className="mx-6 lg:mx-24">
                   <YoutubeFrame
-                    width={500}
-                    height={400}
+                    // width={500}
+                    // height={400}
+                    opts={opts}
                     videoId="863eD7FML_0"
+                    onReady={_onReady}
                   />
                   {/* <p className="capitalize text-white font-bold text-2xl">
                     Newsroom
