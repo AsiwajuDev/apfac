@@ -29,11 +29,11 @@ export default function Contact() {
         >
           <div className="container px-5 lg:mx-auto">
             <div>
-              <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
+              <div className="flex flex-wrap mr-4 md:justify-between md:mx-4 lg:mx-0">
                 <div className="mb-4">
-                  <div className="mx-6 mb-6">
+                  <div className=" lg:mx-6 mb-6">
                     <p className="text-white font-bold text-xl">apfac group</p>
-                    <p className="text-white text-6xl leading-none sm:text-7xl font-bold pb-4">
+                    <p className="text-white text-5xl leading-none sm:text-7xl font-bold pb-4">
                       contact us
                     </p>
                   </div>

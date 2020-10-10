@@ -18,14 +18,14 @@ export default function Index() {
                   <p className="capitalize text-white font-bold text-xl">
                     our story
                   </p>
-                  <p className="text-white text-6xl leading-none sm:text-7xl font-bold pb-4">
+                  <p className="text-white text-5xl leading-none sm:text-7xl font-bold pb-4">
                     we're good
                     <br /> together
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
                   <div className="rounded max-w-sm lg:max-w-md bg-white overflow-hidden shadow-lg">
-                    <div className="px-6 py-4">
+                    <div className="px-4 py-4">
                       <div className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
                         A Substainable Goal to Grow Together
                       </div>

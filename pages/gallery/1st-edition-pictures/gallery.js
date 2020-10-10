@@ -28,7 +28,7 @@ const GalleryImage = (images) => {
                   <p className="capitalize text-white font-semibold text-2xl">
                     Gallery
                   </p>
-                  <p className="text-white text-6xl leading-none sm:text-7xl font-bold pb-4">
+                  <p className="text-white text-5xl leading-none sm:text-7xl font-bold pb-4">
                     africa alive!
                   </p>
                 </div>

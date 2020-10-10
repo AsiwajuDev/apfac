@@ -44,7 +44,7 @@ export default function Values() {
                 </div>
               </div>
               <div className="hidden md:block rounded w-64 bg-white justify-center overflow-hidden shadow-lg">
-                <div className="mx-12 py-4">
+                <div className="py-4 mx-8 lg:mx-12">
                   <div>
                     <div className="mb-4">
                       <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">

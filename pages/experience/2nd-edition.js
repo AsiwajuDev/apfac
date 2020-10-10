@@ -15,7 +15,7 @@ export default function SecondEdition() {
         <div className="flex flex-wrap justify-center  md:flex-no-wrap md:justify-between lg:mx-0">
           <div className="md:w-2/6 lg:w-1/5">
             <div className="hidden md:block bg-white overflow-hidden">
-              <div className="px-6 pt-12 ml-10">
+              <div className="px-6 pt-20 lg:pt-8 lg:ml-8">
                 <div className="mb-4">
                   <p className="mb-3">
                     <div className="capitalize font-bold text-sm sm:text-lg lg:text-lg mb-1">

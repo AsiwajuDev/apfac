@@ -4,11 +4,6 @@ import { SITE_NAME } from "../lib/constants";
 import Frame from "../components/frame";
 
 export default function About() {
-  // fetch("https://test.usapfac.org/wp-json/wp/v2/posts")
-  //   .then((response) => response.json())
-  //   .then((data) => console.log(data))
-  //   .catch((err) => console.log(err));
-
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -22,9 +17,9 @@ export default function About() {
           <div className="container px-5 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
               <div className="mb-4">
-                <div className="mx-6 mb-6">
+                <div className="mx-5 mb-6">
                   <p className="text-white font-bold text-xl">who we are</p>
-                  <p className="text-white text-4xl leading-none sm:text-6xl font-bold pb-4">
+                  <p className="text-white text-3xl leading-none sm:text-6xl font-bold pb-4">
                     the power of great
                     <br /> culture and Africa
                   </p>
@@ -115,8 +110,8 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              <div className="hidden md:block rounded w-64 h-68 bg-white justify-center overflow-hidden shadow-lg">
-                <div className="mx-12 py-4">
+              <div className="hidden lg:block rounded w-64 h-68 bg-white justify-center overflow-hidden shadow-lg">
+                <div className="py-4 mx-8 lg:mx-12">
                   <div>
                     <div className="mb-4">
                       <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">

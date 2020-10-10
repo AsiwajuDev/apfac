@@ -24,7 +24,7 @@ export default function Board() {
               </div>
               <div className="mb-10 sm:mx-6 flex justify-center">
                 <div className="col-span-9 mt-8">
-                  <div className="grid grid-cols-12 gap-6 sm:gap-10 mt-5">
+                  <div className="grid grid-cols-12 sm:grid-cols-6 lg:grid-cols-12 gap-6 lg:gap-8 mt-5">
                     <CardFrame
                       image="/about/PATRICK-DURODOLA.png"
                       bgColor="bg-white"
