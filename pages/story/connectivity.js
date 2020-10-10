@@ -54,14 +54,17 @@ export default function Connectivity() {
                     <Frame
                       media="/favicon/media1.jpg"
                       className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      mediaUrl="#"
                     />
                     <Frame
                       media="/favicon/media2.jpg"
                       className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      mediaUrl="#"
                     />
                     <Frame
                       media="/favicon/media3.jpg"
                       className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      mediaUrl="#"
                     />
                   </div>
                   <p className="mb-4">

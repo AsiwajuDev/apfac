@@ -32,21 +32,25 @@ export default function Meeting() {
                       cardTitle="1st Edition Pictures"
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery1.jpg"
+                      mediaUrl="gallery/1st-edition-pictures/gallery"
                     />
                     <Card
                       cardTitle="Seminar"
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery2.jpg"
+                      mediaUrl="gallery/seminar"
                     />
                     <Card
                       cardTitle="Meeting"
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery3.jpg"
+                      mediaUrl="gallery/meeting"
                     />
                     <Card
                       cardTitle="2020 Programme"
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery4.jpg"
+                      mediaUrl="gallery/programme"
                     />
                   </div>
                 </div>

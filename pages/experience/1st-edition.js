@@ -33,6 +33,7 @@ const FirstEdition = ({ images }) => {
                     mediaTitle="Africa peace festival art and culture 2019"
                     media="/favicon/experience1.jpg"
                     className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                    mediaUrl="experience/1st-edition"
                   />
                 </div>
                 <div className="mb-4">
@@ -46,6 +47,7 @@ const FirstEdition = ({ images }) => {
                     mediaTitle="Africa peace festival art and culture 2020"
                     media="/favicon/experience2.jpg"
                     className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                    mediaUrl="experience/2nd-edition"
                   />
                 </div>
               </div>

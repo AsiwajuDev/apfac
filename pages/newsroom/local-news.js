@@ -41,6 +41,7 @@ const LocalNews = ({ posts }) => {
                       <Frame
                         media="/favicon/newsroom2.jpg"
                         className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                        mediaUrl="newsroom/local-news"
                       />
                     </div>
                     <div className="mb-3">
@@ -53,6 +54,7 @@ const LocalNews = ({ posts }) => {
                       <Frame
                         media="/favicon/newsroom2.jpg"
                         className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                        mediaUrl="newsroom/african-news"
                       />
                     </div>
                     <div className="mb-3">
@@ -65,6 +67,7 @@ const LocalNews = ({ posts }) => {
                       <Frame
                         media="/favicon/newsroom3.jpg"
                         className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                        mediaUrl="newsroom/world-news"
                       />
                     </div>
                   </div>

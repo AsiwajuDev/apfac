@@ -128,6 +128,7 @@ export default function About() {
                       <Frame
                         media="/favicon/about1.jpg"
                         className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                        mediaUrl="about"
                       />
                     </div>
                   </div>
@@ -143,6 +144,7 @@ export default function About() {
                       <Frame
                         media="/favicon/about1.jpg"
                         className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                        mediaUrl="values"
                       />
                     </div>
                   </div>
@@ -158,6 +160,7 @@ export default function About() {
                       <Frame
                         media="/favicon/about3.jpg"
                         className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                        mediaUrl="board"
                       />
                     </div>
                   </div>

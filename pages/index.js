@@ -5,10 +5,7 @@ import Frame from "../components/frame";
 
 export default function Index() {
   return (
-    
-      
     <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
-    
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
@@ -61,14 +58,17 @@ export default function Index() {
                     <Frame
                       media="/favicon/media1.jpg"
                       className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      mediaUrl="#"
                     />
                     <Frame
                       media="/favicon/media2.jpg"
                       className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      mediaUrl="#"
                     />
                     <Frame
                       media="/favicon/media3.jpg"
                       className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                      mediaUrl="#"
                     />
                   </div>
                   <p className="mb-4">
@@ -79,13 +79,12 @@ export default function Index() {
                   <div>{/* <Frame media="/favicon/media1.jpg" /> */}</div>
                 </div>
               </div>
-              
+
               {/* <div className="justify-end"></div> */}
             </div>
           </div>
         </div>
       </div>
     </Layout>
-    
   );
 }
