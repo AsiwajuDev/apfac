@@ -37,7 +37,7 @@ const GalleryImage = (images) => {
                 </div>
                 <div>
                   <span
-                    className="capitalize cursor-pointer hover:text-red-600 text-white italic text-2xl"
+                    className="capitalize cursor-pointer hover:text-red-600 text-base text-white italic sm:text-2xl"
                     onClick={() => router.back()}
                   >
                     <i class="fa fa-chevron-left"></i>
