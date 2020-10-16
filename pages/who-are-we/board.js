@@ -1,14 +1,14 @@
 import Head from "next/head";
-import Layout from "../components/layout";
-import { SITE_NAME } from "../lib/constants";
-import Frame from "../components/frame";
-import CardFrame from "../components/cardFrame";
+import Layout from "../../components/layout";
+import { SITE_NAME } from "../../lib/constants";
+import Frame from "../../components/frame";
+import CardFrame from "../../components/cardFrame";
 
 export default function Board() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Board `}</title>
       </Head>
       <div>
         <div

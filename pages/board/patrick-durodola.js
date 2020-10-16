@@ -8,66 +8,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Patrick() {
-  const [header, setHeader] = useState();
-  //   let url = "https://test.usapfac.org/wp-json/wp/v2/pages/2";
-
-  //   const getData = async () => {
-  //     // let url = "https://test.usapfac.org/wp-json/wp/v2/posts/11";
-  //     const response = await axios.get(url);
-  //     // console.log(response.data.title);
-
-  //     setHeader(response.data);
-  //   };
-
-  useEffect(() => {
-    async function fetchData() {
-      let url = "https://test.usapfac.org/wp-json/wp/v2/pages/2";
-      let result;
-      try {
-        const res = await fetch(url);
-        result = await res.json();
-        // console.log(result);
-      } catch (err) {
-        console.log("Error", err);
-        result = [];
-      }
-      //   return {
-      //     result: result,
-      //   };
-
-      setHeader(result);
-    }
-    fetchData();
-  }, []);
-
-  //   console.log(header);
-
-  //   useEffect(() => {
-  //     // getData();
-  //     getInitialProps();
-  //   }, []);
-
-  // Resolve promise and set initial props.
-  //   async function getInitialProps() {
-  //     // Make request for posts.
-  //     const response = await axios.get(url);
-
-  //     // Return response to posts object in props.
-  //     return {
-  //       posts: response.data,
-  //     };
-  //   }
-
-  //   console.log(header);
-  //   const { title, content } = header;
-  //   console.log(content);
-  //   console.log(header.title);
-  //   console.log();
-
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Patrick Durodola `}</title>
       </Head>
       <div>
         <div

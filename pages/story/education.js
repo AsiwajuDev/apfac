@@ -7,7 +7,7 @@ export default function Education() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Education `}</title>
       </Head>
       <div>
         <div

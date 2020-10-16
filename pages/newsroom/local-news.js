@@ -19,7 +19,7 @@ const LocalNews = ({ posts }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Local News `}</title>
       </Head>
       <div>
         <div

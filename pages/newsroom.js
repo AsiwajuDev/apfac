@@ -7,7 +7,7 @@ export default function Newsroom() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Newsroom `}</title>
       </Head>
       <div>
         <div

@@ -17,7 +17,7 @@ const GalleryImage = (images) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - 1st Edition Pictures Gallery `}</title>
       </Head>
       <div>
         <div className="bg-cover bg-no-repeat bg-top pt-32 pb-2 bg-gray-800">

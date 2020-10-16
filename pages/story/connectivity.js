@@ -7,7 +7,7 @@ export default function Connectivity() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Connectivity `}</title>
       </Head>
       <div>
         <div

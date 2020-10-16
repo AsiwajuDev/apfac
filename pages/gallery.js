@@ -8,7 +8,7 @@ export default function Gallery() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Gallery `}</title>
       </Head>
       <div>
         <div

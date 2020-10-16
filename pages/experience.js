@@ -9,7 +9,7 @@ export default function Experience() {
       imageUrl={{ backgroundImage: "url(/favicon/experience-header.jpg)" }}
     >
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Experience `}</title>
       </Head>
       <div>
         <div className="flex flex-wrap justify-center  md:flex-no-wrap md:justify-between lg:mx-0">

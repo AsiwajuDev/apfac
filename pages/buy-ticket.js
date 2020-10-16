@@ -24,7 +24,7 @@ const BuyTicket = () => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Buy Ticket `}</title>
       </Head>
       <div>
         <div

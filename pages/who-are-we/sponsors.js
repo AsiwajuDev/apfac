@@ -1,15 +1,15 @@
 import Head from "next/head";
-import Layout from "../components/layout";
-import { SITE_NAME } from "../lib/constants";
-import Frame from "../components/frame";
-import Card from "../components/card";
-import ImageFrame from "../components/imageFrame";
+import Layout from "../../components/layout";
+import { SITE_NAME } from "../../lib/constants";
+import Frame from "../../components/frame";
+import Card from "../../components/card";
+import ImageFrame from "../../components/imageFrame";
 
 export default function Sponsors() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Sponsors `}</title>
       </Head>
       <div>
         <div

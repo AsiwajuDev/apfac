@@ -67,7 +67,7 @@ export default function Patrick() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Patrick Durodola `}</title>
       </Head>
       <div>
         <div

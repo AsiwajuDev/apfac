@@ -6,7 +6,7 @@ export default function Help() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/contact-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Help `}</title>
       </Head>
       <div>
         <div

@@ -23,7 +23,7 @@ export default function WorldNews() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - World News `}</title>
       </Head>
       <div>
         <div

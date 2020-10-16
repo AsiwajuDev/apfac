@@ -16,7 +16,7 @@ const FirstEditionPicture = () => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - 1st Edition Pictures `}</title>
       </Head>
       <div>
         <div

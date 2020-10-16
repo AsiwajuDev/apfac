@@ -6,6 +6,9 @@ import Frame from "../components/frame";
 export default function Index() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
+      <Head>
+        <title>{SITE_NAME}</title>
+      </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"

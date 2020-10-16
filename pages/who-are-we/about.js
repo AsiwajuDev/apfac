@@ -1,13 +1,13 @@
 import Head from "next/head";
-import Layout from "../components/layout";
-import { SITE_NAME } from "../lib/constants";
-import Frame from "../components/frame";
+import Layout from "../../components/layout";
+import { SITE_NAME } from "../../lib/constants";
+import Frame from "../../components/frame";
 
 export default function About() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - About `}</title>
       </Head>
       <div>
         <div

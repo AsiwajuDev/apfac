@@ -7,7 +7,7 @@ export default function Covid() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Covid-19 `}</title>
       </Head>
       <div>
         <div

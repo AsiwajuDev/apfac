@@ -19,7 +19,7 @@ export default function Contact() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/contact-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Contact Us `}</title>
       </Head>
 
       <div>

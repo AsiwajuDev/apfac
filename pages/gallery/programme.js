@@ -8,7 +8,7 @@ export default function Programme() {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
       <Head>
-        <title>{SITE_NAME}</title>
+        <title>{`${SITE_NAME} - Programme `}</title>
       </Head>
       <div>
         <div
