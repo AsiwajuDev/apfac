@@ -1,9 +1,27 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import { SITE_NAME } from "../lib/constants";
+// import fetch from "isomorphic-unfetch";
 import Frame from "../components/frame";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function Index() {
+// const fetcher = async function (...args) {
+//   const res = await fetch(...args);
+//   return res.json();
+// };
+
+const Index = () => {
+  // const [home, setHome] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://usapfac-admin.herokuapp.com/homes")
+  //     .then((res) => {
+  //       setHome(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
+  // console.log("Data:" + JSON.stringify(home));
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
       <Head>
@@ -29,9 +47,9 @@ export default function Index() {
                 <div className="border-l-4 border-red-600 px-4">
                   <div className="rounded max-w-sm lg:max-w-md bg-white overflow-hidden shadow-lg">
                     <div className="px-4 py-4">
-                      <div className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
+                      <p className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
                         A Substainable Goal to Grow Together
-                      </div>
+                      </p>
                       <p className="text-gray-800 text-sm text-justify lg:text-base leading-tight">
                         <span className="text-5xl font-semibold initial-letter">
                           O
@@ -90,4 +108,15 @@ export default function Index() {
       </div>
     </Layout>
   );
-}
+};
+
+// Index.getInitialProps = async () => {
+//   const url = "https://usapfac-admin.herokuapp.com/homes";
+//   const res = await fetcher(url);
+
+//   console.log(res);
+
+//   return { home: res.data };
+// };
+
+export default Index;

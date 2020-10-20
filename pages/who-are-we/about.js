@@ -2,8 +2,9 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
+import axios from "axios";
 
-export default function About() {
+const About = ({ about }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -28,10 +29,11 @@ export default function About() {
                   <div className="max-w-3xl rounded bg-white overflow-hidden shadow-lg">
                     <div className="px-6 py-4">
                       <div className="text-green-400 capitalize font-semibold text-sm sm:text-lg lg:text-lg mb-2">
-                        {/* A Substainable Goal to Grow Together */}
+                        {/* {about.header} */}
                         history/about us
                       </div>
                       <div className="text-gray-800 text-sm sm:text-base text-justify">
+                        {/* {about.body} */}
                         <p className="mb-2">
                           Afrika Peace Festival of Arts and Culture (APFAC) is
                           an initiative of United States of Afrika Peace
@@ -168,4 +170,15 @@ export default function About() {
       </div>
     </Layout>
   );
-}
+};
+
+About.getInitialProps = async () => {
+  const url = `http://localhost:1337/abouts`;
+  // const url = `https://usapfac-admin.herokuapp.com/abouts`;
+  const res = await axios.get(url);
+  const data = res.data;
+
+  return { about: data[0] };
+};
+
+export default About;

@@ -2,8 +2,10 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-export default function Values() {
+const Values = ({ value }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -21,6 +23,7 @@ export default function Values() {
                   {/* <p className="text-white font-bold text-xl">who we are</p> */}
                   <p className="text-white text-4xl leading-none sm:text-5xl font-bold pb-4">
                     core value
+                    {/* {value.header} */}
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
@@ -33,6 +36,7 @@ export default function Values() {
                         <span className="text-5xl font-semibold initial-letter">
                           APFAC
                         </span>
+                        {/* {value.body} */}
                         core value is to ensure that PAN AFRIKAN youths are
                         trained, developed and empowered by enhanced skills
                         acquisition, social and economic development,
@@ -101,4 +105,14 @@ export default function Values() {
       </div>
     </Layout>
   );
-}
+};
+
+Values.getInitialProps = async () => {
+  const url = `https://usapfac-admin.herokuapp.com/values`;
+  const res = await axios.get(url);
+  const data = res.data;
+
+  return { value: data[0] };
+};
+
+export default Values;
