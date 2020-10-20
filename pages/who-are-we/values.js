@@ -107,12 +107,12 @@ const Values = ({ value }) => {
   );
 };
 
-Values.getInitialProps = async () => {
-  const url = `https://usapfac-admin.herokuapp.com/values`;
-  const res = await axios.get(url);
-  const data = res.data;
+// Values.getInitialProps = async () => {
+//   const url = `https://usapfac-admin.herokuapp.com/values`;
+//   const res = await axios.get(url);
+//   const data = res.data;
 
-  return { value: data[0] };
-};
+//   return { value: data[0] };
+// };
 
 export default Values;
