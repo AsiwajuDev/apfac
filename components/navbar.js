@@ -277,7 +277,7 @@ export default function NavBar() {
             </span>
             <ul className="dropdown-menu z-50 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
               <li className="">
-                <Link href="/box-office/how-t0-book">
+                <Link href="/box-office/how-to-book">
                   <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
                     How to book
                   </a>

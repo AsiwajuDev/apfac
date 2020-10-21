@@ -3,7 +3,7 @@ import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import axios from "axios";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const Values = ({ value }) => {
   return (
@@ -36,12 +36,12 @@ const Values = ({ value }) => {
                         <span className="text-5xl font-semibold initial-letter">
                           APFAC
                         </span>
-                        {/* {value.body} */}
-                        core value is to ensure that PAN AFRIKAN youths are
+                        {value.body}
+                        {/* core value is to ensure that PAN AFRIKAN youths are
                         trained, developed and empowered by enhanced skills
                         acquisition, social and economic development,
                         educational development within communities with arts
-                        cultural related activities.
+                        cultural related activities. */}
                       </p>
                     </div>
                   </div>
@@ -107,12 +107,12 @@ const Values = ({ value }) => {
   );
 };
 
-// Values.getInitialProps = async () => {
-//   const url = `https://usapfac-admin.herokuapp.com/values`;
-//   const res = await axios.get(url);
-//   const data = res.data;
+Values.getInitialProps = async () => {
+  const url = `https://usapfac-admin.herokuapp.com/values`;
+  const res = await axios.get(url);
+  const data = res.data;
 
-//   return { value: data[0] };
-// };
+  return { value: data[0] };
+};
 
 export default Values;

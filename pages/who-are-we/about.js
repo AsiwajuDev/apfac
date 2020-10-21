@@ -172,12 +172,12 @@ const About = ({ about }) => {
   );
 };
 
-// About.getInitialProps = async () => {
-//   const url = `https://usapfac-admin.herokuapp.com/abouts`;
-//   const res = await axios.get(url);
-//   const data = res.data;
+About.getInitialProps = async () => {
+  const url = `https://usapfac-admin.herokuapp.com/abouts`;
+  const res = await axios.get(url);
+  const data = res.data;
 
-//   return { about: data[0] };
-// };
+  return { about: data[0] };
+};
 
 export default About;
