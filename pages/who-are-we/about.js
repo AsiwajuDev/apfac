@@ -4,7 +4,7 @@ import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import axios from "axios";
 
-const About = () => {
+const About = ({ about }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -29,8 +29,8 @@ const About = () => {
                   <div className="max-w-3xl rounded bg-white overflow-hidden shadow-lg">
                     <div className="px-6 py-4">
                       <div className="text-green-400 capitalize font-semibold text-sm sm:text-lg lg:text-lg mb-2">
-                        {/* {about.header} */}
-                        history/about us
+                        {about.header}
+                        {/* history/about us */}
                       </div>
                       <div className="text-gray-800 text-sm sm:text-base text-justify">
                         {/* {about.body} */}
@@ -173,8 +173,7 @@ const About = () => {
 };
 
 // About.getInitialProps = async () => {
-//   const url = `http://localhost:1337/abouts`;
-//   // const url = `https://usapfac-admin.herokuapp.com/abouts`;
+//   const url = `https://usapfac-admin.herokuapp.com/abouts`;
 //   const res = await axios.get(url);
 //   const data = res.data;
 

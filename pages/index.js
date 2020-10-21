@@ -11,7 +11,7 @@ import axios from "axios";
 //   return res.json();
 // };
 
-const Index = () => {
+const Index = ({ home }) => {
   // const [home, setHome] = useState([]);
   // useEffect(() => {
   //   axios
@@ -48,19 +48,21 @@ const Index = () => {
                   <div className="rounded max-w-sm lg:max-w-md bg-white overflow-hidden shadow-lg">
                     <div className="px-4 py-4">
                       <p className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
-                        A Substainable Goal to Grow Together
+                        {/* A Substainable Goal to Grow Together */}
+                        {home.header}
                       </p>
                       <p className="text-gray-800 text-sm text-justify lg:text-base leading-tight">
                         <span className="text-5xl font-semibold initial-letter">
                           O
                         </span>
-                        ne of the pre-eminent objectives of APFAC is to
+                        {home.body}
+                        {/* ne of the pre-eminent objectives of APFAC is to
                         consistently celebrate whatever strides that have been
                         achieved in the march of Pan Africans towards
                         sustainable accomplishment by the presentation of the
                         Annual Global Peace Awards, to serve as veritable
                         motivation for youths to continue to progress
-                        satisfactorily on all fronts on the global terrain.
+                        satisfactorily on all fronts on the global terrain. */}
                       </p>
                     </div>
                   </div>
@@ -110,13 +112,12 @@ const Index = () => {
   );
 };
 
-// Index.getInitialProps = async () => {
-//   const url = "https://usapfac-admin.herokuapp.com/homes";
-//   const res = await fetcher(url);
+Index.getInitialProps = async () => {
+  const url = `https://usapfac-admin.herokuapp.com/homes`;
+  const res = await axios.get(url);
+  const data = res.data;
 
-//   console.log(res);
-
-//   return { home: res.data };
-// };
+  return { home: data[0] };
+};
 
 export default Index;
