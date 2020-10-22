@@ -5,10 +5,10 @@ import Frame from "../../components/frame";
 import CardFrame from "../../components/cardFrame";
 import axios from "axios";
 
-const Board = ({ board }) => {
-  console.log("Board: " + JSON.stringify(board.image[0].url));
-  console.log("Name: " + JSON.stringify(board.name));
-  console.log("Position: " + JSON.stringify(board.position));
+const Board = () => {
+  // console.log("Board: " + JSON.stringify(board.image[0].url));
+  // console.log("Name: " + JSON.stringify(board.name));
+  // console.log("Position: " + JSON.stringify(board.position));
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -75,12 +75,12 @@ const Board = ({ board }) => {
   );
 };
 
-Board.getInitialProps = async () => {
-  const url = `https://usapfac-admin.herokuapp.com/boards`;
-  const res = await axios.get(url);
-  const data = res.data;
+// Board.getInitialProps = async () => {
+//   const url = `https://usapfac-admin.herokuapp.com/boards`;
+//   const res = await axios.get(url);
+//   const data = res.data;
 
-  return { board: data };
-};
+//   return { board: data };
+// };
 
 export default Board;
