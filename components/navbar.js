@@ -390,7 +390,48 @@ export default function NavBar() {
           </div>
         </div>
 
-        <div className="text-center text-white mb-3">
+        <div className="text-white mb-3">
+          <div className="dropdown inline-block relative">
+            <a className="bg-transparent border border-white hover:border-red-500 font-semibold py-2 w-32 justify-center z-50 rounded-full inline-flex items-center">
+              <span className="mr-1">Contact</span>
+            </a>
+            <span className="px-2">
+              <i className="fa fa-caret-down" aria-hidden="true"></i>
+            </span>
+            <ul className="dropdown-menu z-50 absolute text-left hidden text-white pt-1 divide-y divide-white px-6">
+              <li className="">
+                <Link href="/contact">
+                  <a className="rounded-t-lg bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
+                    Contact Us
+                  </a>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/contact/venues">
+                  <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
+                    Venues
+                  </a>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/contact/where-to-stay">
+                  <a className="bg-black hover:bg-black py-2 px-4 block whitespace-no-wrap">
+                    Where to Stay
+                  </a>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/contact/how-to-get-here">
+                  <a className="bg-black rounded-b-lg hover:bg-black py-2 px-4 block whitespace-no-wrap">
+                    How to get here
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* <div className="text-center text-white mb-3">
           <div className="dropdown inline-block relative">
             <Link href="/contact">
               <a className="bg-transparent border border-white hover:border-red-500 font-semibold py-2 w-32 justify-center rounded-full inline-flex items-center">
@@ -401,7 +442,7 @@ export default function NavBar() {
               <i className="fa fa-caret-down" aria-hidden="true"></i>
             </span>
           </div>
-        </div>
+        </div> */}
 
         {/* <div className="text-center text-white mb-3">
           <div className="dropdown inline-block relative">
