@@ -98,11 +98,27 @@ const LocalNews = ({ posts }) => {
   );
 };
 
-LocalNews.getInitialProps = async () => {
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
   const url = `http://newsapi.org/v2/top-headlines?country=ng&apiKey=33fdf48678554c70b4dadf00fca13abb`;
   const res = await fetcher(url);
+  const posts = res.articles;
 
-  return { posts: res.articles };
-};
+  // By returning { props: posts }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      posts,
+    },
+  };
+}
+
+// LocalNews.getInitialProps = async () => {
+//   const url = `http://newsapi.org/v2/top-headlines?country=ng&apiKey=33fdf48678554c70b4dadf00fca13abb`;
+//   const res = await fetcher(url);
+
+//   return { posts: res.articles };
+// };
 
 export default LocalNews;

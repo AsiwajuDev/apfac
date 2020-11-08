@@ -2,6 +2,7 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 export default function Covid() {
   return (
@@ -63,12 +64,17 @@ export default function Covid() {
               </div>
               <div className="md:w-4/6 lg:w-4/5 my-auto">
                 <div className="mx-6 lg:mx-24">
-                  <p className="capitalize text-white font-bold text-2xl">
+                  <TwitterTimelineEmbed
+                    sourceType="profile"
+                    screenName="NCDCgov"
+                    options={{ height: 450 }}
+                  />
+                  {/* <p className="capitalize text-white font-bold text-2xl">
                     Newsroom
                   </p>
                   <p className="text-white text-4xl mx-0 leading-none sm:text-5xl lg:text-6xl font-bold pb-4">
                     watch thousands of news and series on all your devices...
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
