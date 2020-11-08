@@ -51,8 +51,7 @@
     "remark": "^13.0.0",
     "remark-gfm": "^1.0.0",
     "remark-html": "^13.0.1",
-    "sass": "^1.26.11",
-    "showdown": "^1.9.1"
+    "sass": "^1.26.11"
   },
   "devDependencies": {
     "autoprefixer": "9.8.6",
