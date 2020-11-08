@@ -5,10 +5,7 @@ import Frame from "../../components/frame";
 import CardFrame from "../../components/cardFrame";
 import axios from "axios";
 
-const Board = () => {
-  // console.log("Board: " + JSON.stringify(board.image[0].url));
-  // console.log("Name: " + JSON.stringify(board.name));
-  // console.log("Position: " + JSON.stringify(board.position));
+const Board = ({ boards }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -29,7 +26,19 @@ const Board = () => {
               <div className="mb-10 sm:mx-6 flex justify-center">
                 <div className="col-span-9 mt-8">
                   <div className="grid grid-cols-12 sm:grid-cols-6 lg:grid-cols-12 gap-6 lg:gap-8 mt-5">
-                    <CardFrame
+                    {boards.map((board, id) => {
+                      return (
+                        <CardFrame
+                          key={id}
+                          image={board.imageURL}
+                          bgColor="bg-white"
+                          imageTitle={board.name}
+                          imageBody={board.position}
+                          pageUrl={board.boardUrl}
+                        />
+                      );
+                    })}
+                    {/* <CardFrame
                       image="/about/PATRICK-DURODOLA.png"
                       bgColor="bg-white"
                       imageTitle="Patrick Durodola"
@@ -63,7 +72,7 @@ const Board = () => {
                       imageTitle="Mwalimu Kabaila"
                       imageBody="Director"
                       pageUrl="board/mwalimu-kabaila"
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -75,12 +84,12 @@ const Board = () => {
   );
 };
 
-// Board.getInitialProps = async () => {
-//   const url = `https://usapfac-admin.herokuapp.com/boards`;
-//   const res = await axios.get(url);
-//   const data = res.data;
+Board.getInitialProps = async () => {
+  const url = "https://usapfac-admin.herokuapp.com/boards";
+  const res = await axios.get(url);
+  const data = res.data;
 
-//   return { board: data };
-// };
+  return { boards: data };
+};
 
 export default Board;

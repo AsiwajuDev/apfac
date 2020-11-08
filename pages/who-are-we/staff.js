@@ -3,8 +3,9 @@ import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import CardFrame from "../../components/cardFrame";
+import axios from "axios";
 
-export default function Staff() {
+const Staff = ({ staffs }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -25,7 +26,19 @@ export default function Staff() {
               <div className="mb-10 sm:mx-6 flex justify-center">
                 <div className="col-span-12 mt-8">
                   <div className="grid grid-cols-12 sm:grid-cols-6 lg:grid-cols-12 gap-6 lg:gap-8 mt-5">
-                    <CardFrame
+                    {staffs.map((staff, id) => {
+                      return (
+                        <CardFrame
+                          key={id}
+                          image={staff.imageURL}
+                          bgColor="bg-white"
+                          imageTitle={staff.name}
+                          imageBody={staff.position}
+                          pageUrl={staff.staffUrl}
+                        />
+                      );
+                    })}
+                    {/* <CardFrame
                       image="/about/PATRICK-DURODOLA.png"
                       bgColor="bg-white"
                       imageTitle="Patrick Durodola"
@@ -38,27 +51,6 @@ export default function Staff() {
                       imageTitle="Azubuike Okoronkwo"
                       imageBody="Director"
                       pageUrl="staff/azubuike-chinedum"
-                    />
-                    {/* <CardFrame
-                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                      bgColor="bg-white"
-                      imageTitle="Franchesska Berry"
-                      imageBody="Director"
-                      pageUrl="franchesska-berry"
-                    />
-                    <CardFrame
-                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                      bgColor="bg-white"
-                      imageTitle="Nivia Nduka"
-                      imageBody="Director"
-                      pageUrl="nivia-nduka"
-                    />
-                    <CardFrame
-                      image="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                      bgColor="bg-white"
-                      imageTitle="Mwalimu Kabaila"
-                      imageBody="Director"
-                      pageUrl="mwalimu-kabaila"
                     /> */}
                   </div>
                 </div>
@@ -69,4 +61,14 @@ export default function Staff() {
       </div>
     </Layout>
   );
-}
+};
+
+Staff.getInitialProps = async () => {
+  const url = "https://usapfac-admin.herokuapp.com/staffs";
+  const res = await axios.get(url);
+  const data = res.data;
+
+  return { staffs: data };
+};
+
+export default Staff;
