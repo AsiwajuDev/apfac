@@ -22,8 +22,8 @@ const Values = ({ value }) => {
                 <div className="mx-6 mb-6">
                   {/* <p className="text-white font-bold text-xl">who we are</p> */}
                   <p className="text-white text-4xl leading-none sm:text-5xl font-bold pb-4">
-                    {/* core value */}
-                    {value.header}
+                    core value
+                    {console.log(value)}
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
@@ -33,8 +33,8 @@ const Values = ({ value }) => {
                         A Substainable Goal to Grow Together
                       </div> */}
                       <p className="text-gray-800 text-sm text-justify lg:text-base leading-tight">
-                        <span className="text-5xl font-semibold initial-letter">
-                          APFAC
+                        <span className="text-5xl uppercase font-semibold initial-letter">
+                          {value.header}
                         </span>
                         {value.body}
                         {/* core value is to ensure that PAN AFRIKAN youths are
@@ -107,12 +107,27 @@ const Values = ({ value }) => {
   );
 };
 
-Values.getInitialProps = async () => {
-  const url = `https://usapfac-admin.herokuapp.com/value`;
-  const res = await axios.get(url);
-  const data = res.data;
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts.
+  // You can use any data fetching library
+  const res = await fetch("https://usapfac-admin.herokuapp.com/value");
+  const value = await res.json();
 
-  return { value: data };
-};
+  // By returning { props: posts }, the Blog component
+  // will receive `posts` as a prop at build time
+  return {
+    props: {
+      value,
+    },
+  };
+}
+
+// Values.getInitialProps = async () => {
+//   const url = "https://usapfac-admin.herokuapp.com/value";
+//   const res = await axios.get(url);
+//   const data = res.data;
+
+//   return { value: data };
+// };
 
 export default Values;
