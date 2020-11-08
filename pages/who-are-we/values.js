@@ -107,27 +107,12 @@ const Values = ({ value }) => {
   );
 };
 
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const res = await fetch("https://usapfac-admin.herokuapp.com/value");
-  const value = await res.json();
+Values.getInitialProps = async () => {
+  const url = "https://usapfac-admin.herokuapp.com/value";
+  const res = await axios.get(url);
+  const data = res.data;
 
-  // By returning { props: posts }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      value,
-    },
-  };
-}
-
-// Values.getInitialProps = async () => {
-//   const url = "https://usapfac-admin.herokuapp.com/value";
-//   const res = await axios.get(url);
-//   const data = res.data;
-
-//   return { value: data };
-// };
+  return { value: data };
+};
 
 export default Values;

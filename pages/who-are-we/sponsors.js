@@ -4,8 +4,9 @@ import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import Card from "../../components/card";
 import ImageFrame from "../../components/imageFrame";
+import axios from "axios";
 
-export default function Sponsors() {
+const Sponsors = ({ sponsors }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -26,7 +27,16 @@ export default function Sponsors() {
               <div className="mb-10 mx-6">
                 <div className="col-span-12 mt-8">
                   <div className="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
-                    <ImageFrame
+                    {sponsors.map((sponsor, id) => {
+                      return (
+                        <ImageFrame
+                          key={id}
+                          className="w-full h-64"
+                          imageFull={sponsor.imageURL}
+                        />
+                      );
+                    })}
+                    {/* <ImageFrame
                       className="w-full h-64"
                       imageFull="/about/usapfac.jpeg"
                     />
@@ -49,7 +59,7 @@ export default function Sponsors() {
                     <ImageFrame
                       className="w-full h-64"
                       imageFull="/about/nadia.jpeg"
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -59,4 +69,14 @@ export default function Sponsors() {
       </div>
     </Layout>
   );
-}
+};
+
+Sponsors.getInitialProps = async () => {
+  const url = "https://usapfac-admin.herokuapp.com/sponsors";
+  const res = await axios.get(url);
+  const data = res.data;
+
+  return { sponsors: data };
+};
+
+export default Sponsors;
