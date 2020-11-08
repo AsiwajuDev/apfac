@@ -3,8 +3,9 @@ import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
+import axios from "axios";
 
-export default function Covid() {
+const Covid = ({ covid }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
       <Head>
@@ -66,7 +67,7 @@ export default function Covid() {
                 <div className="mx-6 lg:mx-24">
                   <TwitterTimelineEmbed
                     sourceType="profile"
-                    screenName="NCDCgov"
+                    screenName={covid.newsID}
                     options={{ height: 450 }}
                   />
                   {/* <p className="capitalize text-white font-bold text-2xl">
@@ -83,4 +84,15 @@ export default function Covid() {
       </div>
     </Layout>
   );
-}
+};
+
+Covid.getInitialProps = async () => {
+  const url = `http://localhost:1337/newsrooms`;
+  // const url = `https://usapfac-admin.herokuapp.com/about`;
+  const res = await axios.get(url);
+  const data = res.data;
+
+  return { covid: data[0] };
+};
+
+export default Covid;
