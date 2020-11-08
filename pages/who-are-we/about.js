@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import axios from "axios";
+import MDReactComponent from "markdown-react-js";
 
 const About = ({ about }) => {
   return (
@@ -30,11 +31,10 @@ const About = ({ about }) => {
                     <div className="px-6 py-4">
                       <div className="text-green-400 capitalize font-semibold text-sm sm:text-lg lg:text-lg mb-2">
                         {about.header}
-                        {/* history/about us */}
                       </div>
                       <div className="text-gray-800 text-sm sm:text-base text-justify">
-                        {/* {about.body} */}
-                        <p className="mb-2">
+                        <MDReactComponent text={about.body} />
+                        {/* <p className="mb-2">
                           Afrika Peace Festival of Arts and Culture (APFAC) is
                           an initiative of United States of Afrika Peace
                           Festival of Arts and Culture. It was conceived in 2013
@@ -106,7 +106,7 @@ const About = ({ about }) => {
                             put to a sustainable community programme for African
                             communities.
                           </li>
-                        </ul>
+                        </ul> */}
                       </div>
                     </div>
                   </div>
@@ -145,7 +145,6 @@ const About = ({ about }) => {
                       />
                     </div>
                   </div>
-
                   <div>
                     <div className="mb-4">
                       <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">
@@ -173,11 +172,11 @@ const About = ({ about }) => {
 };
 
 About.getInitialProps = async () => {
-  const url = `https://usapfac-admin.herokuapp.com/abouts`;
+  const url = `https://usapfac-admin.herokuapp.com/about`;
   const res = await axios.get(url);
   const data = res.data;
 
-  return { about: data[0] };
+  return { about: data };
 };
 
 export default About;

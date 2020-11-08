@@ -22,8 +22,8 @@ const Values = ({ value }) => {
                 <div className="mx-6 mb-6">
                   {/* <p className="text-white font-bold text-xl">who we are</p> */}
                   <p className="text-white text-4xl leading-none sm:text-5xl font-bold pb-4">
-                    core value
-                    {/* {value.header} */}
+                    {/* core value */}
+                    {value.header}
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
@@ -108,11 +108,11 @@ const Values = ({ value }) => {
 };
 
 Values.getInitialProps = async () => {
-  const url = `https://usapfac-admin.herokuapp.com/values`;
+  const url = `https://usapfac-admin.herokuapp.com/value`;
   const res = await axios.get(url);
   const data = res.data;
 
-  return { value: data[0] };
+  return { value: data };
 };
 
 export default Values;

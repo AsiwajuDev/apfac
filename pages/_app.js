@@ -4,6 +4,7 @@ import "../css/product.css";
 import "../css/dist/css/app.css";
 // import "react-image-gallery/styles/css/image-gallery.css";
 import "react-bnb-gallery/dist/style.css";
+import "highlight.js/styles/github.css";
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;

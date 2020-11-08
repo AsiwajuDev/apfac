@@ -1,9 +1,9 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import fetch from "isomorphic-unfetch";
-import YoutubeFrame from "../../components/youtubeFrame";
 import NewsCard from "../../components/newsCard";
 import { useEffect } from "react";
 import moment from "moment";
@@ -14,8 +14,6 @@ const fetcher = async function (...args) {
 };
 
 const LocalNews = ({ posts }) => {
-  console.log(posts[0].author);
-
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
       <Head>
@@ -87,9 +85,7 @@ const LocalNews = ({ posts }) => {
                           cardURL={p.url}
                           newsDate={moment(p.publishedAt).fromNow()}
                         />
-                        // <Post key={p.title} post={p} />
                       ))}
-                      {/* <NewsCard /> */}
                     </div>
                   </div>
                 </div>
