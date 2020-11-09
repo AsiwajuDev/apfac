@@ -1,27 +1,11 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import { SITE_NAME } from "../lib/constants";
-// import fetch from "isomorphic-unfetch";
 import Frame from "../components/frame";
-import { useEffect, useState } from "react";
+import MDReactComponent from "markdown-react-js";
 import axios from "axios";
 
-// const fetcher = async function (...args) {
-//   const res = await fetch(...args);
-//   return res.json();
-// };
-
-const Index = () => {
-  // const [home, setHome] = useState([]);
-  // useEffect(() => {
-  //   axios
-  //     .get("https://usapfac-admin.herokuapp.com/homes")
-  //     .then((res) => {
-  //       setHome(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
-  // console.log("Data:" + JSON.stringify(home));
+const Index = ({ home }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
       <Head>
@@ -48,21 +32,21 @@ const Index = () => {
                   <div className="rounded max-w-sm lg:max-w-md bg-white overflow-hidden shadow-lg">
                     <div className="px-4 py-4">
                       <p className="text-green-400 font-semibold text-sm sm:text-lg lg:text-lg mb-2">
-                        A Substainable Goal to Grow Together
-                        {/* {home.header} */}
+                        {/* A Substainable Goal to Grow Together */}
+                        {home.header}
                       </p>
                       <p className="text-gray-800 text-sm text-justify lg:text-base leading-tight">
-                        <span className="text-5xl font-semibold initial-letter">
-                          O
+                        <span className="text-5xl font-semibold uppercase initial-letter">
+                          {home.title}
                         </span>
-                        {/* {home.body} */}
-                        ne of the pre-eminent objectives of APFAC is to
+                        <MDReactComponent text={home.body} />
+                        {/* ne of the pre-eminent objectives of APFAC is to
                         consistently celebrate whatever strides that have been
                         achieved in the march of Pan Africans towards
                         sustainable accomplishment by the presentation of the
                         Annual Global Peace Awards, to serve as veritable
                         motivation for youths to continue to progress
-                        satisfactorily on all fronts on the global terrain.
+                        satisfactorily on all fronts on the global terrain. */}
                       </p>
                     </div>
                   </div>
@@ -99,11 +83,9 @@ const Index = () => {
                       Category
                     </div>
                   </p>
-                  <div>{/* <Frame media="/favicon/media1.jpg" /> */}</div>
+                  <div></div>
                 </div>
               </div>
-
-              {/* <div className="justify-end"></div> */}
             </div>
           </div>
         </div>
@@ -112,12 +94,13 @@ const Index = () => {
   );
 };
 
-// Index.getInitialProps = async () => {
-//   const url = `https://usapfac-admin.herokuapp.com/homes`;
-//   const res = await axios.get(url);
-//   const data = res.data;
+Index.getInitialProps = async () => {
+  const url = `http://localhost:1337/home`;
+  // const url = `https://usapfac-admin.herokuapp.com/home`;
+  const res = await axios.get(url);
+  const data = res.data;
 
-//   return { home: data[0] };
-// };
+  return { home: data };
+};
 
 export default Index;

@@ -87,8 +87,7 @@ const Covid = ({ covid }) => {
 };
 
 Covid.getInitialProps = async () => {
-  const url = `http://localhost:1337/newsrooms`;
-  // const url = `https://usapfac-admin.herokuapp.com/about`;
+  const url = `https://usapfac-admin.herokuapp.com/newsrooms`;
   const res = await axios.get(url);
   const data = res.data;
 
