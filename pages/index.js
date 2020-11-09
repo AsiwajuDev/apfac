@@ -95,8 +95,7 @@ const Index = ({ home }) => {
 };
 
 Index.getInitialProps = async () => {
-  const url = `http://localhost:1337/home`;
-  // const url = `https://usapfac-admin.herokuapp.com/home`;
+  const url = `https://usapfac-admin.herokuapp.com/home`;
   const res = await axios.get(url);
   const data = res.data;
 
