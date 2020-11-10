@@ -4,7 +4,7 @@ const Frame = ({ media, name, mediaTitle, className, mediaUrl }) => {
   return (
     <div className="">
       <div className=" w-48 lg:w-40">
-        <div className="zoom-in">
+        <div className="">
           <div className="box bg-gray-500">
             <Link href={`/${mediaUrl}`}>
               <a>
