@@ -126,7 +126,7 @@ const About = ({ about, aboutWidget }) => {
                         <div>
                           <Frame
                             media={about.image}
-                            mediaUrl="/about"
+                            mediaUrl={`who-are-we/${about.widgetURL}`}
                             className="mt-3 mb-1 h-24  w-48 lg:w-40"
                           />
                         </div>

@@ -12,7 +12,7 @@ const _onReady = (event) => {
   event.target.play();
 };
 
-const WorldNews = ({ worldNews }) => {
+const WorldNews = ({ worldNews, newsroomWidget }) => {
   const opts = {
     height: "400",
     width: "500",
@@ -36,7 +36,7 @@ const WorldNews = ({ worldNews }) => {
               <div className="md:w-2/6 lg:w-1/5">
                 <div className="hidden md:block w-56 rounded bg-white overflow-hidden shadow-lg">
                   <div className="px-6 py-4">
-                    <div className="mb-3">
+                    {/* <div className="mb-3">
                       <p className="mb-3">
                         <div className="capitalize font-bold text-sm sm:text-lg lg:text-lg mb-1">
                           African News
@@ -48,33 +48,25 @@ const WorldNews = ({ worldNews }) => {
                         className="mt-3 mb-1 h-24  w-48 lg:w-40"
                         mediaUrl="newsroom/local-news"
                       />
-                    </div>
-                    <div className="mb-3">
-                      <p className="mb-3">
-                        <div className="capitalize font-bold text-sm sm:text-lg lg:text-lg mb-1">
-                          Global News
+                    </div> */}
+                    {newsroomWidget.map((newsroom, id) => {
+                      return (
+                        <div className="mb-4" key={id} e>
+                          <p className="mb-3">
+                            <div className="capitalize font-bold text-sm sm:text-lg lg:text-lg mb-1">
+                              {newsroom.header}
+                            </div>
+                            <div className="border-2 border-red-600 w-16"></div>
+                          </p>
+
+                          <Frame
+                            media={newsroom.image}
+                            className="mt-3 mb-1 h-24 w-48 lg:w-40"
+                            mediaUrl={`newsroom/${newsroom.widgetURL}`}
+                          />
                         </div>
-                        <div className="border-2 border-red-600 w-16"></div>
-                      </p>
-                      <Frame
-                        media="/favicon/newsroom2.jpg"
-                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
-                        mediaUrl="newsroom/african-news"
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <p className="mb-3">
-                        <div className="capitalize font-bold text-sm sm:text-lg lg:text-lg mb-1">
-                          World News
-                        </div>
-                        <div className="border-2 border-red-600 w-16"></div>
-                      </p>
-                      <Frame
-                        media="/favicon/newsroom3.jpg"
-                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
-                        mediaUrl="newsroom/world-news"
-                      />
-                    </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -108,7 +100,11 @@ WorldNews.getInitialProps = async () => {
   const res = await axios.get(url);
   const data = res.data;
 
-  return { worldNews: data[2] };
+  const url1 = "https://usapfac-admin.herokuapp.com/newsroom-widgets";
+  const res1 = await axios.get(url1);
+  const datas = res1.data;
+
+  return { worldNews: data[2], newsroomWidget: datas };
 };
 
 export default WorldNews;
