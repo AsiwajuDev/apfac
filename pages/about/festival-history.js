@@ -5,7 +5,7 @@ import Frame from "../../components/frame";
 import axios from "axios";
 import MDReactComponent from "markdown-react-js";
 
-const FestivalHistory = ({ about }) => {
+const FestivalHistory = ({ about, aboutWidget }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -114,52 +114,24 @@ const FestivalHistory = ({ about }) => {
               </div>
               <div className="hidden lg:block rounded w-64 h-68 bg-white justify-center overflow-hidden shadow-lg">
                 <div className="py-4 mx-8 lg:mx-12">
-                  <div>
-                    <div className="mb-4">
-                      <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">
-                        history
-                      </p>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </div>
-                    <div>
-                      <Frame
-                        media="/favicon/about1.jpg"
-                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
-                        mediaUrl="about"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="mb-4">
-                      <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">
-                        values
-                      </p>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </div>
-                    <div>
-                      <Frame
-                        media="/favicon/about1.jpg"
-                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
-                        mediaUrl="values"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="mb-4">
-                      <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">
-                        leadership
-                      </p>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </div>
-                    <div>
-                      <Frame
-                        media="/favicon/about3.jpg"
-                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
-                        mediaUrl="board"
-                      />
-                    </div>
-                  </div>
+                  {aboutWidget.map((about, id) => {
+                    return (
+                      <div key={id}>
+                        <div className="mb-4">
+                          <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">
+                            {about.header}
+                          </p>
+                          <div className="border-2 border-red-600 w-16"></div>
+                        </div>
+                        <div>
+                          <Frame
+                            media={about.image}
+                            className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               {/* <div className="justify-end"></div> */}
@@ -176,7 +148,11 @@ FestivalHistory.getInitialProps = async () => {
   const res = await axios.get(url);
   const data = res.data;
 
-  return { about: data };
+  const urls = `https://usapfac-admin.herokuapp.com/about-widgets`;
+  const res1 = await axios.get(urls);
+  const datas = res1.data;
+
+  return { about: data, aboutWidget: datas };
 };
 
 export default FestivalHistory;

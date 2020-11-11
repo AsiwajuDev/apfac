@@ -52,7 +52,7 @@ const Seminar = ({ seminars }) => {
 };
 
 Seminar.getInitialProps = async () => {
-  const url = "https://usapfac-admin.herokuapp.com/experience-widgets";
+  const url = "https://usapfac-admin.herokuapp.com/gallery-widgets";
   const res = await axios.get(url);
   const data = res.data;
 
