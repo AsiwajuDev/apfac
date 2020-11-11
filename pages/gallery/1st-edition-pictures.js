@@ -1,18 +1,16 @@
 import Head from "next/head";
 import fetch from "isomorphic-unfetch";
-
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
-import Frame from "../../components/frame";
 import Card from "../../components/card";
-import Gallery from "./cloudinary/Gallery";
+import axios from "axios";
 
 const fetcher = async function (...args) {
   const res = await fetch(...args);
   return res.json();
 };
 
-const FirstEditionPicture = () => {
+const FirstEditionPicture = ({ firstEditionPictures }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
       <Head>
@@ -37,13 +35,19 @@ const FirstEditionPicture = () => {
                 <div className="col-span-12 mt-8">
                   {/* <Gallery images={images.images} /> */}
                   <div className="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
-                    <Card
-                      cardTitle="1st Edition Pictures"
-                      mediaTitle="Africa peace festival art and culture 2019"
-                      media="/favicon/gallery1.jpg"
-                      mediaUrl="gallery/1st-edition-pictures/gallery"
-                    />
-                    <Card
+                    {firstEditionPictures.map((firstEditionPicture, id) => {
+                      return (
+                        <Card
+                          key={id}
+                          cardTitle={firstEditionPicture.galleryWidgetHeader}
+                          mediaTitle={firstEditionPicture.galleryWidgetTitle}
+                          media={firstEditionPicture.galleryWidgetImage}
+                          mediaUrl="gallery/1st-edition-pictures/gallery"
+                        />
+                      );
+                    })}
+
+                    {/* <Card
                       cardTitle="Seminar"
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery2.jpg"
@@ -60,7 +64,7 @@ const FirstEditionPicture = () => {
                       mediaTitle="Africa peace festival art and culture 2019"
                       media="/favicon/gallery4.jpg"
                       mediaUrl="gallery/programme"
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -70,6 +74,14 @@ const FirstEditionPicture = () => {
       </div>
     </Layout>
   );
+};
+
+FirstEditionPicture.getInitialProps = async () => {
+  const url = "https://usapfac-admin.herokuapp.com/experience-widgets";
+  const res = await axios.get(url);
+  const data = res.data;
+
+  return { firstEditionPictures: data };
 };
 
 export default FirstEditionPicture;

@@ -3,8 +3,9 @@ import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import Card from "../../components/card";
+import axios from "axios";
 
-export default function Meeting() {
+const Meeting = ({ meetings }) => {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
       <Head>
@@ -28,30 +29,17 @@ export default function Meeting() {
               <div className="mb-10 mx-6">
                 <div className="col-span-12 mt-8">
                   <div className="grid grid-cols-12 gap-6 sm:gap-8 mt-5">
-                    <Card
-                      cardTitle="1st Edition Pictures"
-                      mediaTitle="Africa peace festival art and culture 2019"
-                      media="/favicon/gallery1.jpg"
-                      mediaUrl="gallery/1st-edition-pictures/gallery"
-                    />
-                    <Card
-                      cardTitle="Seminar"
-                      mediaTitle="Africa peace festival art and culture 2019"
-                      media="/favicon/gallery2.jpg"
-                      mediaUrl="gallery/seminar"
-                    />
-                    <Card
-                      cardTitle="Meeting"
-                      mediaTitle="Africa peace festival art and culture 2019"
-                      media="/favicon/gallery3.jpg"
-                      mediaUrl="gallery/meeting"
-                    />
-                    <Card
-                      cardTitle="2020 Programme"
-                      mediaTitle="Africa peace festival art and culture 2019"
-                      media="/favicon/gallery4.jpg"
-                      mediaUrl="gallery/programme"
-                    />
+                    {meetings.map((meeting, id) => {
+                      return (
+                        <Card
+                          key={id}
+                          cardTitle={meeting.galleryWidgetHeader}
+                          mediaTitle={meeting.galleryWidgetTitle}
+                          media={meeting.galleryWidgetImage}
+                          mediaUrl="gallery/1st-edition-pictures/gallery"
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -61,4 +49,14 @@ export default function Meeting() {
       </div>
     </Layout>
   );
-}
+};
+
+Meeting.getInitialProps = async () => {
+  const url = "https://usapfac-admin.herokuapp.com/experience-widgets";
+  const res = await axios.get(url);
+  const data = res.data;
+
+  return { meetings: data };
+};
+
+export default Meeting;
