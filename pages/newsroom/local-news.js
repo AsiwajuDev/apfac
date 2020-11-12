@@ -14,16 +14,16 @@ const fetcher = async function (...args) {
   return res.json();
 };
 
-const LocalNews = ({ posts, newsroomWidget }) => {
+const LocalNews = ({ posts, newsroomWidget, data }) => {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${data.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - Local News `}</title>
       </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top"
-          style={{ backgroundImage: "url(/favicon/news.jpg)" }}
+          style={{ backgroundImage: `url(${data.bodyImage})` }}
         >
           <div className="container pl-3 lg:px-10 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center  md:flex-no-wrap md:justify-between md:mx-4 lg:mx-0">
@@ -100,10 +100,15 @@ export async function getServerSideProps() {
   const res1 = await axios.get(url1);
   const newsroomWidget = res1.data;
 
+  const url2 = `https://usapfac-admin.herokuapp.com/newsrooms`;
+  const res2 = await axios.get(url2);
+  const data = res2.data[0];
+
   return {
     props: {
       posts,
       newsroomWidget,
+      data,
     },
   };
 }

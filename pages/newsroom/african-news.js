@@ -7,14 +7,14 @@ import axios from "axios";
 
 const AfricanNews = ({ africanNews, newsroomWidget }) => {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/newsroom-header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${africanNews.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - African News `}</title>
       </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top py-6"
-          style={{ backgroundImage: "url(/favicon/news.jpg)" }}
+          style={{ backgroundImage: `url(${africanNews.bodyImage})` }}
         >
           <div className="container pl-3 lg:px-10 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center  md:flex-no-wrap md:justify-between md:mx-4 lg:mx-0">
