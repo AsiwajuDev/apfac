@@ -102,7 +102,7 @@ export async function getServerSideProps() {
 
   const url2 = `https://usapfac-admin.herokuapp.com/newsrooms`;
   const res2 = await axios.get(url2);
-  const data = res2.data[0];
+  const data = res2.data[3];
 
   return {
     props: {
