@@ -3,12 +3,11 @@ import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
 import axios from "axios";
+import MDReactComponent from "markdown-react-js";
 
-const FirstEdition = ({ firstEditions }) => {
+const FirstEdition = ({ firstEditions, experience }) => {
   return (
-    <Layout
-      imageUrl={{ backgroundImage: "url(/favicon/experience-header.jpg)" }}
-    >
+    <Layout imageUrl={{ backgroundImage: `url(${experience.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - 1st Edition Experience `}</title>
       </Head>
@@ -58,18 +57,20 @@ const FirstEdition = ({ firstEditions }) => {
             <div className="container lg:mx-auto">
               <div
                 className="bg-cover bg-no-repeat bg-top py-32"
-                style={{ backgroundImage: "url(/favicon/experience.jpg)" }}
+                style={{ backgroundImage: `url(${experience.bodyImage})` }}
               >
                 <div className="container px-5 py-10 lg:mx-auto">
                   <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
                     <div className="mb-4">
                       <div className="mx-3 sm:mx-6 mb-6">
                         <p className="capitalize text-white font-bold text-xl">
-                          Experience
+                          {/* Experience */}
+                          {experience.header}
                         </p>
                         <p className="text-white text-5xl leading-none sm:text-7xl font-bold pb-4">
-                          watch the
-                          <br /> shows online
+                          <MDReactComponent text={experience.body} />
+                          {/* watch the
+                          <br /> shows online */}
                         </p>
                       </div>
                     </div>
@@ -89,7 +90,11 @@ FirstEdition.getInitialProps = async () => {
   const res = await axios.get(url);
   const data = res.data;
 
-  return { firstEditions: data };
+  const url1 = "https://usapfac-admin.herokuapp.com/experiences";
+  const res1 = await axios.get(url1);
+  const datas = res1.data;
+
+  return { firstEditions: data, experience: datas[0] };
 };
 
 export default FirstEdition;
