@@ -42,7 +42,7 @@ const FirstEditionPicture = ({ firstEditionPictures }) => {
                           cardTitle={firstEditionPicture.galleryWidgetHeader}
                           mediaTitle={firstEditionPicture.galleryWidgetTitle}
                           media={firstEditionPicture.galleryWidgetImage}
-                          mediaUrl="gallery/1st-edition-pictures/gallery"
+                          mediaUrl={firstEditionPicture.galleryWidgetUrl}
                         />
                       );
                     })}
