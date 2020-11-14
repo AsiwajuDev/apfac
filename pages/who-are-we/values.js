@@ -5,16 +5,16 @@ import Frame from "../../components/frame";
 import axios from "axios";
 // import { useEffect, useState } from "react";
 
-const Values = ({ value, aboutWidget }) => {
+const Values = ({ value, aboutWidget, assets }) => {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - Values `}</title>
       </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
-          style={{ backgroundImage: "url(/favicon/about.jpg)" }}
+          style={{ backgroundImage: `url(${assets.bodyImage})` }}
         >
           <div className="container px-5 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
@@ -79,7 +79,8 @@ const Values = ({ value, aboutWidget }) => {
   );
 };
 
-Values.getInitialProps = async () => {
+// Values.getInitialProps = async () => {
+export async function getServerSideProps() {
   const url = "https://usapfac-admin.herokuapp.com/value";
   const res = await axios.get(url);
   const data = res.data;
@@ -88,7 +89,13 @@ Values.getInitialProps = async () => {
   const res1 = await axios.get(urls);
   const datas = res1.data;
 
-  return { value: data, aboutWidget: datas };
-};
+  const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
+  const res2 = await axios.get(url1);
+  const data1 = res2.data;
+
+  return {
+    props: { value: data, aboutWidget: datas, assets: data1[2] },
+  };
+}
 
 export default Values;

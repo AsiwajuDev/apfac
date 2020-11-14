@@ -5,16 +5,16 @@ import Frame from "../components/frame";
 import MDReactComponent from "markdown-react-js";
 import axios from "axios";
 
-const Index = ({ home }) => {
+const Index = ({ home, assets }) => {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{SITE_NAME}</title>
       </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
-          style={{ backgroundImage: "url(/favicon/home-bg.jpg)" }}
+          style={{ backgroundImage: `url(${assets.bodyImage})` }}
         >
           <div className="container px-5 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
@@ -94,12 +94,19 @@ const Index = ({ home }) => {
   );
 };
 
-Index.getInitialProps = async () => {
+// Index.getInitialProps = async () =>
+export async function getServerSideProps() {
   const url = `https://usapfac-admin.herokuapp.com/home`;
   const res = await axios.get(url);
   const data = res.data;
 
-  return { home: data };
-};
+  const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
+  const res1 = await axios.get(url1);
+  const datas = res1.data;
+
+  return {
+    props: { home: data, assets: datas[0] },
+  };
+}
 
 export default Index;
