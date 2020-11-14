@@ -79,7 +79,8 @@ const Covid = ({ covid, newsroomWidget }) => {
   );
 };
 
-Covid.getInitialProps = async () => {
+// Covid.getInitialProps = async () => {
+export async function getServerSideProps() {
   const url = `https://usapfac-admin.herokuapp.com/newsrooms`;
   const res = await axios.get(url);
   const data = res.data;
@@ -88,7 +89,9 @@ Covid.getInitialProps = async () => {
   const res1 = await axios.get(url1);
   const datas = res1.data;
 
-  return { covid: data[0], newsroomWidget: datas };
-};
+  return {
+    props: { covid: data[0], newsroomWidget: datas },
+  };
+}
 
 export default Covid;

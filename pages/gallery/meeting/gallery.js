@@ -5,17 +5,18 @@ import fetch from "isomorphic-unfetch";
 import Layout from "../../../components/layout";
 import { SITE_NAME } from "../../../lib/constants";
 import Gallery from "../cloudinary/Gallery";
+import axios from "axios";
 
 const fetcher = async function (...args) {
   const res = await fetch(...args);
   return res.json();
 };
 
-const MeetingGalleryImage = (images) => {
+const MeetingGalleryImage = ({ assets }, images) => {
   const router = useRouter();
 
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - 1st Edition Pictures Gallery `}</title>
       </Head>
@@ -52,11 +53,18 @@ const MeetingGalleryImage = (images) => {
   );
 };
 
-MeetingGalleryImage.getInitialProps = async () => {
+// MeetingGalleryImage.getInitialProps = async () => {
+export async function getServerSideProps() {
   const url = `https://res.cloudinary.com/dxwzdkhyb/image/list/1stedition.json`;
   const res = await fetcher(url);
 
-  return { images: res.resources };
-};
+  const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
+  const res2 = await axios.get(url1);
+  const data1 = res2.data;
+
+  return {
+    props: { images: res.resources, assets: data1[17] },
+  };
+}
 
 export default MeetingGalleryImage;

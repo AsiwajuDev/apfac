@@ -5,16 +5,16 @@ import Frame from "../../components/frame";
 import Card from "../../components/card";
 import axios from "axios";
 
-const Seminar = ({ seminars }) => {
+const Seminar = ({ seminars, assets }) => {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/gallery-header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - Seminar `}</title>
       </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-32 pb-2"
-          style={{ backgroundImage: "url(/favicon/gallery.jpg)" }}
+          style={{ backgroundImage: `url(${assets.bodyImage})` }}
         >
           <div className="container lg:mx-auto">
             <div className="sm:mx-20 md:mx-4 lg:mx-0">
@@ -36,7 +36,7 @@ const Seminar = ({ seminars }) => {
                           cardTitle={seminar.galleryWidgetHeader}
                           mediaTitle={seminar.galleryWidgetTitle}
                           media={seminar.galleryWidgetImage}
-                          mediaUrl="gallery/1st-edition-pictures/gallery"
+                          mediaUrl={seminar.galleryWidgetUrl}
                         />
                       );
                     })}
@@ -51,12 +51,19 @@ const Seminar = ({ seminars }) => {
   );
 };
 
-Seminar.getInitialProps = async () => {
+// Seminar.getInitialProps = async () => {
+export async function getServerSideProps() {
   const url = "https://usapfac-admin.herokuapp.com/gallery-widgets";
   const res = await axios.get(url);
   const data = res.data;
 
-  return { seminars: data };
-};
+  const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
+  const res2 = await axios.get(url1);
+  const data1 = res2.data;
+
+  return {
+    props: { seminars: data, assets: data1[14] },
+  };
+}
 
 export default Seminar;

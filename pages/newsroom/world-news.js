@@ -95,7 +95,8 @@ const WorldNews = ({ worldNews, newsroomWidget }) => {
   );
 };
 
-WorldNews.getInitialProps = async () => {
+// WorldNews.getInitialProps = async () => {
+export async function getServerSideProps() {
   const url = `https://usapfac-admin.herokuapp.com/newsrooms`;
   const res = await axios.get(url);
   const data = res.data;
@@ -104,7 +105,9 @@ WorldNews.getInitialProps = async () => {
   const res1 = await axios.get(url1);
   const datas = res1.data;
 
-  return { worldNews: data[2], newsroomWidget: datas };
-};
+  return {
+    props: { worldNews: data[2], newsroomWidget: datas },
+  };
+}
 
 export default WorldNews;
