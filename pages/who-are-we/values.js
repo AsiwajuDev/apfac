@@ -23,7 +23,6 @@ const Values = ({ value, aboutWidget, assets }) => {
                   {/* <p className="text-white font-bold text-xl">who we are</p> */}
                   <p className="text-white text-4xl leading-none sm:text-5xl font-bold pb-4">
                     core value
-                    {console.log(value)}
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
