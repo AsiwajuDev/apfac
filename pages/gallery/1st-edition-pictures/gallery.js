@@ -54,7 +54,7 @@ const GalleryImage = ({ assets }, images) => {
 };
 
 // GalleryImage.getInitialProps = async () => {
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const url = `https://res.cloudinary.com/dxwzdkhyb/image/list/1stedition.json`;
   const res = await fetcher(url);
 

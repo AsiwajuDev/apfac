@@ -145,7 +145,7 @@ const About = ({ about, aboutWidget, assets }) => {
 };
 
 // About.getInitialProps = async () => {
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const url = `https://usapfac-admin.herokuapp.com/about`;
   const res = await axios.get(url);
   const data = res.data;

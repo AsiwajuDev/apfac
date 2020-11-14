@@ -87,7 +87,7 @@ export default function Archive({ assets }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
   const res2 = await axios.get(url1);
   const data1 = res2.data;

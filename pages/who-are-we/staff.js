@@ -64,7 +64,7 @@ const Staff = ({ staffs, assets }) => {
 };
 
 // Staff.getInitialProps = async () => {
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const url = "https://usapfac-admin.herokuapp.com/staffs";
   const res = await axios.get(url);
   const data = res.data;
