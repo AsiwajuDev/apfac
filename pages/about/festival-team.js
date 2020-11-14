@@ -5,16 +5,16 @@ import Frame from "../../components/frame";
 import CardFrame from "../../components/cardFrame";
 import axios from "axios";
 
-const FestivalTeam = ({ staffs }) => {
+const FestivalTeam = ({ staffs, assets }) => {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - Staff `}</title>
       </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top py-12"
-          style={{ backgroundImage: "url(/favicon/about.jpg)" }}
+          style={{ backgroundImage: `url(${assets.bodyImage})` }}
         >
           <div className="container lg:mx-auto">
             <div className="sm:mx-20 md:mx-4 lg:mx-0">
@@ -63,12 +63,19 @@ const FestivalTeam = ({ staffs }) => {
   );
 };
 
-FestivalTeam.getInitialProps = async () => {
+// FestivalTeam.getInitialProps = async () => {
+export async function getServerSideProps() {
   const url = "https://usapfac-admin.herokuapp.com/staffs";
   const res = await axios.get(url);
   const data = res.data;
 
-  return { staffs: data };
-};
+  const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
+  const res2 = await axios.get(url1);
+  const data1 = res2.data;
+
+  return {
+    props: { staffs: data, assets: data1[8] },
+  };
+}
 
 export default FestivalTeam;
