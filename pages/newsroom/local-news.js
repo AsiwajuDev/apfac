@@ -91,7 +91,7 @@ const LocalNews = ({ posts, newsroomWidget, data }) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const url = `http://newsapi.org/v2/top-headlines?country=ng&apiKey=33fdf48678554c70b4dadf00fca13abb`;
   const res = await fetcher(url);
   const posts = res.articles;
@@ -104,6 +104,8 @@ export async function getServerSideProps() {
   const res2 = await axios.get(url2);
   const data = res2.data[3];
 
+  console.log(posts);
+
   return {
     props: {
       posts,
@@ -112,17 +114,5 @@ export async function getServerSideProps() {
     },
   };
 }
-
-// export async function getStaticProps() {
-//   const url = `http://newsapi.org/v2/top-headlines?country=ng&apiKey=33fdf48678554c70b4dadf00fca13abb`;
-//   const res = await fetcher(url);
-//   const posts = res.articles;
-
-//   return {
-//     props: {
-//       posts,
-//     },
-//   };
-// }
 
 export default LocalNews;

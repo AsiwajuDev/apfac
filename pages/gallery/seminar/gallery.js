@@ -11,7 +11,7 @@ const fetcher = async function (...args) {
   return res.json();
 };
 
-const SeminarGalleryImage = () => {
+const SeminarGalleryImage = (images) => {
   const router = useRouter();
 
   return (
@@ -41,7 +41,7 @@ const SeminarGalleryImage = () => {
               </div>
               <div className="mb-10 mx-6">
                 <div className="col-span-12 mt-8">
-                  {/* <Gallery images={images.images} /> */}
+                  <Gallery images={images.images} />
                 </div>
               </div>
             </div>
@@ -52,10 +52,11 @@ const SeminarGalleryImage = () => {
   );
 };
 
-// SeminarGalleryImage.getInitialProps = async () => {
-//   const url = `https://res.cloudinary.com/dxwzdkhyb/image/list/1stedition.json`;
-//   const res = await fetcher(url);
-//   return { images: res.resources };
-// };
+SeminarGalleryImage.getInitialProps = async () => {
+  const url = `https://res.cloudinary.com/dxwzdkhyb/image/list/1stedition.json`;
+  const res = await fetcher(url);
+
+  return { images: res.resources };
+};
 
 export default SeminarGalleryImage;
