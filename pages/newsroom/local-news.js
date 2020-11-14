@@ -104,8 +104,6 @@ export async function getStaticProps() {
   const res2 = await axios.get(url2);
   const data = res2.data[3];
 
-  console.log(posts);
-
   return {
     props: {
       posts,
