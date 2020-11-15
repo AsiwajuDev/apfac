@@ -2,17 +2,18 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { SITE_NAME } from "../../lib/constants";
 import Frame from "../../components/frame";
+import axios from "axios";
 
-export default function SpecialOffers() {
+export default function SpecialOffers({ assets }) {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - Special Offers `}</title>
       </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
-          style={{ backgroundImage: "url(/favicon/home-bg.jpg)" }}
+          style={{ backgroundImage: `url(${assets.bodyImage})` }}
         >
           <div className="container px-5 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
@@ -84,4 +85,14 @@ export default function SpecialOffers() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
+  const res2 = await axios.get(url1);
+  const data1 = res2.data;
+
+  return {
+    props: { assets: data1[22] },
+  };
 }

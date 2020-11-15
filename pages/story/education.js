@@ -5,14 +5,14 @@ import Frame from "../../components/frame";
 
 export default function Education() {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - Education `}</title>
       </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
-          style={{ backgroundImage: "url(/favicon/home-bg.jpg)" }}
+          style={{ backgroundImage: `url(${assets.bodyImage})` }}
         >
           <div className="container px-5 lg:mx-auto">
             <div className="flex flex-wrap mr-4 justify-center md:justify-between md:mx-4 lg:mx-0">
