@@ -2,15 +2,14 @@ import Head from "next/head";
 import StripeCheckout from "react-stripe-checkout";
 import fetch from "isomorphic-unfetch";
 import { PayPalButton } from "react-paypal-button-v2";
+import axios from "axios";
 
 import Layout from "../components/layout";
 import { SITE_NAME } from "../lib/constants";
 import InputField from "../components/InputField";
 import Button from "../components/button";
 
-const price = 200 * 100;
-
-const BuyTicket = () => {
+const BuyTicket = ({ assets }) => {
   const onToken = (token) => {
     fetch("/save-stripe-token", {
       method: "POST",
@@ -21,8 +20,11 @@ const BuyTicket = () => {
       });
     });
   };
+
+  const price = 200 * 100;
+
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - Buy Ticket `}</title>
       </Head>
@@ -30,7 +32,7 @@ const BuyTicket = () => {
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
           style={{
-            backgroundImage: "url(/favicon/ticket-banner.jpg)",
+            backgroundImage: `url(${assets.bodyImage})`,
             height: 500,
           }}
         >
@@ -47,81 +49,6 @@ const BuyTicket = () => {
 
                 <div className="max-w-sm sm:max-w-md bg-opacity-50 z-10 py-2 text-white rounded overflow-hidden shadow-lg">
                   <div className="px-6 py-4">
-                    {/* <form className="w-full max-w-lg">
-                      <div className="flex flex-wrap -mx-3 mb-3">
-                        <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0">
-                          <label
-                            className="block capitalize tracking-wide text-white text-xs font-semibold mb-2"
-                            htmlFor="grid-first-name"
-                          >
-                            Name
-                          </label>
-                          <InputField
-                            className="appearance-none block w-full text-gray-700 bg-black bg-opacity-50 border border-gray-200 opacity-50 rounded p-2 leading-tight focus:outline-none focus:bg-black"
-                            id="grid-first-name"
-                            type="text"
-                          />
-                        </div>
-                        <div className="w-full md:w-1/2 px-3">
-                          <label className="block capitalize tracking-wide text-white text-xs font-semibold mb-2">
-                            Email
-                          </label>
-                          <InputField
-                            className="appearance-none block w-full bg-black bg-opacity-50 border border-gray-200 opacity-50 text-gray-700 rounded p-2 leading-tight focus:outline-none focus:bg-black"
-                            type="email"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap -mx-3 mb-3">
-                        <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0">
-                          <label className="block capitalize tracking-wide text-white text-xs font-semibold mb-2">
-                            Address
-                          </label>
-                          <InputField
-                            className="appearance-none block w-full text-gray-700 bg-black bg-opacity-50 border border-gray-200 opacity-50 rounded p-2 leading-tight focus:outline-none focus:bg-black"
-                            type="text"
-                          />
-                        </div>
-                        <div className="w-full md:w-1/2 px-3">
-                          <label
-                            className="block capitalize tracking-wide text-white text-xs font-semibold mb-2"
-                            htmlFor="grid-last-name"
-                          >
-                            City
-                          </label>
-                          <InputField
-                            className="appearance-none block w-full bg-black bg-opacity-50 border border-gray-200 opacity-50 text-gray-700 rounded p-2 leading-tight focus:outline-none focus:bg-black"
-                            id="grid-last-name"
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap -mx-3 mb-3">
-                        <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0">
-                          <label className="block capitalize tracking-wide text-white text-xs font-semibold mb-2">
-                            State
-                          </label>
-                          <InputField
-                            className="appearance-none block w-full text-gray-700 bg-black bg-opacity-50 border border-gray-200 opacity-50 rounded p-2 leading-tight focus:outline-none focus:bg-black"
-                            type="text"
-                          />
-                        </div>
-                        <div className="w-full md:w-1/2 px-3">
-                          <label
-                            className="block capitalize tracking-wide text-white text-xs font-semibold mb-2"
-                            htmlFor="grid-last-name"
-                          >
-                            Zip Code
-                          </label>
-                          <InputField
-                            className="appearance-none block w-full bg-black bg-opacity-50 border border-gray-200 opacity-50 text-gray-700 rounded p-2 leading-tight focus:outline-none focus:bg-black"
-                            id="grid-last-name"
-                            type="text"
-                          />
-                        </div>
-                      </div>
-                     
-                    </form>*/}
                     <StripeCheckout
                       ComponentClass="div"
                       token={onToken}
@@ -144,7 +71,6 @@ const BuyTicket = () => {
                 </div>
               </div>
               <div className="hidden md:block rounded w-64 justify-center overflow-hidden shadow-lg"></div>
-              {/* <div className="justify-end"></div> */}
             </div>
           </div>
         </div>
@@ -152,5 +78,15 @@ const BuyTicket = () => {
     </Layout>
   );
 };
+
+export async function getStaticProps() {
+  const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
+  const res2 = await axios.get(url1);
+  const data1 = res2.data;
+
+  return {
+    props: { assets: data1[36] },
+  };
+}
 
 export default BuyTicket;

@@ -4,6 +4,7 @@ import { SITE_NAME } from "../lib/constants";
 import ProductList from "../components/product/ProductList";
 import Shop from "../components/shop";
 import Product from "../components/product/Product";
+import axios from "axios";
 
 const productss = [
   {
@@ -43,9 +44,9 @@ const productss = [
     price: 8.0,
   },
 ];
-const Sales = ({ products }) => {
+const Sales = ({ products, assets }) => {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - Sales `}</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -64,7 +65,7 @@ const Sales = ({ products }) => {
       <div>
         <div
           className="bg-cover bg-no-repeat"
-          style={{ backgroundImage: "url(/favicon/about.jpg)" }}
+          style={{ backgroundImage: `url(${assets.bodyImage})` }}
         >
           <div className="bg-orange-400 bg-opacity-75 pt-4 pb-20 ">
             <div className="container px-5 lg:mx-auto">
@@ -94,5 +95,15 @@ const Sales = ({ products }) => {
     </Layout>
   );
 };
+
+export async function getStaticProps() {
+  const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
+  const res2 = await axios.get(url1);
+  const data1 = res2.data;
+
+  return {
+    props: { assets: data1[37] },
+  };
+}
 
 export default Sales;
