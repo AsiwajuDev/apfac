@@ -8,14 +8,14 @@ import MDReactComponent from "markdown-react-js";
 
 export default function Berry({ franchesska, aboutWidget }) {
   return (
-    <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
+    <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
         <title>{`${SITE_NAME} - Franchesska Berry `}</title>
       </Head>
       <div>
         <div
           className="bg-cover bg-no-repeat bg-top pt-12 pb-20"
-          style={{ backgroundImage: "url(/favicon/about.jpg)" }}
+          style={{ backgroundImage: `url(${assets.bodyImage})` }}
         >
           <div className="container px-2 sm:px-5 lg:mx-auto">
             <div className="flex flex-wrap justify-center md:justify-between md:mx-4 lg:mx-0">
@@ -110,6 +110,11 @@ export default function Berry({ franchesska, aboutWidget }) {
 export async function getStaticProps() {
   const url = `https://usapfac-admin.herokuapp.com/board-details`;
   const urls = `https://usapfac-admin.herokuapp.com/about-widgets`;
+  const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
+
+  const res2 = await axios.get(url1);
+  const data1 = res2.data;
+
   const res = await axios.get(url);
   const data = res.data;
 
@@ -117,6 +122,6 @@ export async function getStaticProps() {
   const datas = res1.data;
 
   return {
-    props: { franchesska: data[2], aboutWidget: datas },
+    props: { franchesska: data[2], aboutWidget: datas, assets: data[42] },
   };
 }
