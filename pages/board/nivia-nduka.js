@@ -129,6 +129,6 @@ export async function getStaticProps() {
   const datas = res1.data;
 
   return {
-    props: { nivia: data[3], aboutWidget: datas, assets: data[43] },
+    props: { nivia: data[3], aboutWidget: datas, assets: data1[43] },
   };
 }

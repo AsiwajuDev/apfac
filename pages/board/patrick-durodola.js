@@ -143,6 +143,6 @@ export async function getStaticProps() {
   const datas = res1.data;
 
   return {
-    props: { patrick: data[0], aboutWidget: datas, assets: data[40] },
+    props: { patrick: data[0], aboutWidget: datas, assets: data1[40] },
   };
 }

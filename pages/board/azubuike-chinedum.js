@@ -141,6 +141,6 @@ export async function getStaticProps() {
   const datas = res1.data;
 
   return {
-    props: { azubuike: data[1], aboutWidget: datas, assets: data[41] },
+    props: { azubuike: data[1], aboutWidget: datas, assets: data1[41] },
   };
 }

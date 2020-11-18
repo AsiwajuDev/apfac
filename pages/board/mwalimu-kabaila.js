@@ -85,6 +85,6 @@ export async function getStaticProps() {
   const datas = res1.data;
 
   return {
-    props: { mwalimu: data[4], aboutWidget: datas, assets: data[44] },
+    props: { mwalimu: data[4], aboutWidget: datas, assets: data1[44] },
   };
 }
