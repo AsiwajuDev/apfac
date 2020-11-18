@@ -6,7 +6,7 @@ import ImageFrame from "../../components/imageFrame";
 import axios from "axios";
 import MDReactComponent from "markdown-react-js";
 
-export default function Berry({ franchesska, aboutWidget }) {
+export default function Berry({ franchesska, aboutWidget,assets }) {
   return (
     <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
