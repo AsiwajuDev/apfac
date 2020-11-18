@@ -42,30 +42,7 @@ const MeetingGalleryImage = ({ assets }, images) => {
               </div>
               <div className="mb-10 mx-6">
                 <div className="col-span-12 mt-8">
-                  {/*  */}
-                  <div
-                    className="col-span-12 sm:col-span-6 xl:col-span-3 intro-y"
-                    key={data.public_id}
-                  >
-                    <div className="border-2 border-red-600 mb-3 hover:shadow">
-                      <a
-                        target="_blank"
-                        href={`https://res.cloudinary.com/dxwzdkhyb/image/upload/${data.public_id}.jpg`}
-                      >
-                        <Image publicId={data.public_id}>
-                          <Transformation
-                            crop="scale"
-                            width="400"
-                            height="350"
-                            dpr="auto"
-                            responsive_placeholder="blank"
-                          />
-                        </Image>
-                      </a>
-                    </div>
-                  </div>
-
-                  {/*  */}
+                  <Gallery images={images.images} />
                 </div>
               </div>
             </div>
