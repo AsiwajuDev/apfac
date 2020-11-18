@@ -6,8 +6,9 @@ import ImageFrame from "../../components/imageFrame";
 import { data } from "autoprefixer";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import MDReactComponent from "markdown-react-js";
 
-export default function Azubuike() {
+export default function Azubuike({ azubuike, aboutWidget }) {
   return (
     <Layout imageUrl={{ backgroundImage: "url(/favicon/about-header.jpg)" }}>
       <Head>
@@ -23,8 +24,7 @@ export default function Azubuike() {
               <div className="mb-4">
                 <div className="mx-6">
                   <p className="text-white text-4xl leading-none sm:text-5xl font-bold pb-4">
-                    {/* {!header || header.title.rendered} */} Azubuike Chinedum
-                    Okoronkwo
+                    {azubuike.header}
                   </p>
                 </div>
                 <div className="border-l-4 border-red-600 px-4">
@@ -32,18 +32,11 @@ export default function Azubuike() {
                     <div className="px-6 py-4">
                       <ImageFrame
                         className="w-64 h-64 mb-3"
-                        imageFull="/about/AZUBUIKE-CHINEDUM-OKORONKWO.png"
+                        imageFull={azubuike.image}
                       />
                       <div className="text-gray-800 text-sm sm:text-base text-justify">
-                        {/* <p
-                          dangerouslySetInnerHTML={{
-                            __html: !header || header.content.rendered,
-                          }}
-                        /> */}
-                        {/* {content.rendered} */}
-                        {/* {content} */}
-
-                        <p className="mb-2">
+                        <MDReactComponent text={azubuike.body} />
+                        {/* <p className="mb-2">
                           He is a versatile arts and culture specialist who has
                           experienced both in arts, tourism and culture spanning
                           over decades with major emphasis in community
@@ -54,7 +47,7 @@ export default function Azubuike() {
                           An erudite scholar, he now proceed to add to his
                           knowledge, by obtaining the following professional
                           degrees
-                        </p> */}
+                        </p> 
                         <ul className="list-disc mx-8 mb-2">
                           <li>
                             Improve the operational systems, processes and
@@ -96,13 +89,7 @@ export default function Azubuike() {
                             meetings and joint activities where appropriate.
                           </li>
                         </ul>
-                        {/* <p className="mb-2">
-                          He relentlessly render a high level of result oriented
-                          performance towards achieving organizational goals and
-                          aspirations by contributing to the development of the
-                          organization.
-                        </p> */}
-                        <p className="mb-2">He is married with children.</p>
+                        <p className="mb-2">He is married with children.</p> */}
                       </div>
                     </div>
                   </div>
@@ -110,53 +97,27 @@ export default function Azubuike() {
               </div>
               <div className="hidden lg:block rounded w-64 bg-white justify-center h-68 overflow-hidden shadow-lg">
                 <div className="mx-12 py-4">
-                  <div>
-                    <div className="mb-4">
-                      <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">
-                        history
-                      </p>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </div>
-                    <div>
-                      <Frame
-                        media="/favicon/about1.jpg"
-                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="mb-4">
-                      <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">
-                        values
-                      </p>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </div>
-                    <div>
-                      <Frame
-                        media="/favicon/about1.jpg"
-                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="mb-4">
-                      <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">
-                        leadership
-                      </p>
-                      <div className="border-2 border-red-600 w-16"></div>
-                    </div>
-                    <div>
-                      <Frame
-                        media="/favicon/about3.jpg"
-                        className="mt-3 mb-1 h-24  w-48 lg:w-40"
-                      />
-                    </div>
-                  </div>
+                  {aboutWidget.map((about, id) => {
+                    return (
+                      <div key={id}>
+                        <div className="mb-4">
+                          <p className="font-semibold uppercase text-sm sm:text-lg lg:text-lg mb-1">
+                            {about.header}
+                          </p>
+                          <div className="border-2 border-red-600 w-16"></div>
+                        </div>
+                        <div>
+                          <Frame
+                            media={about.image}
+                            className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                            mediaUrl={`who-are-we/${about.widgetURL}`}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
-              {/* <div className="justify-end"></div> */}
             </div>
           </div>
         </div>
@@ -165,18 +126,16 @@ export default function Azubuike() {
   );
 }
 
-// Patrick.getInitialProps = async () => {
-//   let url = "https://test.usapfac.org/wp-json/wp/v2/pages/2";
-//   let result;
-//   try {
-//     const res = await fetch(url);
-//     result = await res.json();
-//     console.log(result);
-//   } catch (err) {
-//     console.log("Error", err);
-//     result = [];
-//   }
-//   return {
-//     result: result,
-//   };
-// };
+export async function getStaticProps() {
+  const url = `https://usapfac-admin.herokuapp.com/board-details`;
+  const urls = `https://usapfac-admin.herokuapp.com/about-widgets`;
+  const res = await axios.get(url);
+  const data = res.data;
+
+  const res1 = await axios.get(urls);
+  const datas = res1.data;
+
+  return {
+    props: { azubuike: data[1], aboutWidget: datas },
+  };
+}

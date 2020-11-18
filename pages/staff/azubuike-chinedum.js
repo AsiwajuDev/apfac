@@ -105,6 +105,7 @@ const Azubuike = ({ azubuike, aboutWidget }) => {
                           <Frame
                             media={about.image}
                             className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                            mediaUrl={`who-are-we/${about.widgetURL}`}
                           />
                         </div>
                       </div>
@@ -120,7 +121,8 @@ const Azubuike = ({ azubuike, aboutWidget }) => {
   );
 };
 
-Azubuike.getInitialProps = async () => {
+// Azubuike.getInitialProps = async () => {
+export async function getStaticProps() {
   const url = `https://usapfac-admin.herokuapp.com/staff-details`;
   const urls = `https://usapfac-admin.herokuapp.com/about-widgets`;
   const res = await axios.get(url);
@@ -129,7 +131,9 @@ Azubuike.getInitialProps = async () => {
   const res1 = await axios.get(urls);
   const datas = res1.data;
 
-  return { azubuike: data[1], aboutWidget: datas };
-};
+  return {
+    props: { azubuike: data[1], aboutWidget: datas },
+  };
+}
 
 export default Azubuike;

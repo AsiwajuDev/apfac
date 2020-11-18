@@ -111,6 +111,7 @@ const Patrick = ({ patrick, aboutWidget }) => {
                           <Frame
                             media={about.image}
                             className="mt-3 mb-1 h-24  w-48 lg:w-40"
+                            mediaUrl={`who-are-we/${about.widgetURL}`}
                           />
                         </div>
                       </div>
@@ -127,7 +128,8 @@ const Patrick = ({ patrick, aboutWidget }) => {
   );
 };
 
-Patrick.getInitialProps = async () => {
+// Patrick.getInitialProps = async () => {
+export async function getStaticProps() {
   const url = `https://usapfac-admin.herokuapp.com/staff-details`;
   const urls = `https://usapfac-admin.herokuapp.com/about-widgets`;
   const res = await axios.get(url);
@@ -136,7 +138,9 @@ Patrick.getInitialProps = async () => {
   const res1 = await axios.get(urls);
   const datas = res1.data;
 
-  return { patrick: data[0], aboutWidget: datas };
-};
+  return {
+    props: { patrick: data[0], aboutWidget: datas },
+  };
+}
 
 export default Patrick;

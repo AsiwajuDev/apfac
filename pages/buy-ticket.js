@@ -1,15 +1,22 @@
 import Head from "next/head";
 import StripeCheckout from "react-stripe-checkout";
 import fetch from "isomorphic-unfetch";
-import { PayPalButton } from "react-paypal-button-v2";
+import PayPalButtons from "../components/paypal/paypayImports";
 import axios from "axios";
 
 import Layout from "../components/layout";
 import { SITE_NAME } from "../lib/constants";
 import InputField from "../components/InputField";
 import Button from "../components/button";
+import { useState } from "react";
 
 const BuyTicket = ({ assets }) => {
+  const [showPayPal, setShowPayPal] = useState(false);
+
+  const showPayPalButton = () => {
+    setShowPayPal(true);
+  };
+
   const onToken = (token) => {
     fetch("/save-stripe-token", {
       method: "POST",
@@ -49,6 +56,16 @@ const BuyTicket = ({ assets }) => {
 
                 <div className="max-w-sm sm:max-w-md bg-opacity-50 z-10 py-2 text-white rounded overflow-hidden shadow-lg">
                   <div className="px-6 py-4">
+                    {/* {showPayPal ? (
+                      <PayPalButtons />
+                    ) : (
+                      <Button
+                        buttonText="buy ticket"
+                        onClick={showPayPalButton}
+                        className="w-full uppercase bg-red-600 py-3 text-center text-white font-semibold"
+                      />
+                    )} */}
+
                     <StripeCheckout
                       ComponentClass="div"
                       token={onToken}
