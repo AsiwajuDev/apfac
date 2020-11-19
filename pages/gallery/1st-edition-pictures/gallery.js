@@ -12,7 +12,7 @@ const fetcher = async function (...args) {
   return res.json();
 };
 
-const GalleryImage = ({ assets }, images) => {
+const GalleryImage = ({ assets, resources }) => {
   const router = useRouter();
 
   return (
@@ -41,8 +41,14 @@ const GalleryImage = ({ assets }, images) => {
                 </div>
               </div>
               <div className="mb-10 mx-6">
-                <div className="col-span-12 mt-8">
-                  <Gallery images={images.images} />
+                <div class="grid gap-5 grid-cols-1 md:grid-cols-3">
+                  {resources.map((resource, id) => {
+                    return (
+                      <div key={id}>
+                        <img src={resource.image} />;
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -55,15 +61,16 @@ const GalleryImage = ({ assets }, images) => {
 
 // GalleryImage.getInitialProps = async () => {
 export async function getStaticProps() {
-  const url = `https://res.cloudinary.com/dxwzdkhyb/image/list/1stedition.json`;
-  const res = await fetcher(url);
+  const url = `https://usapfac-admin.herokuapp.com/first-edition-pictures-galleries`;
+  const res = await axios.get(url);
+  const data = res.data;
 
   const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
   const res2 = await axios.get(url1);
   const data1 = res2.data;
 
   return {
-    props: { images: res.resources, assets: data1[13] },
+    props: { resources: data, assets: data1[13] },
   };
 }
 
