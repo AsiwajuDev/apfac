@@ -94,8 +94,7 @@ const Index = ({ home, assets }) => {
   );
 };
 
-// Index.getInitialProps = async () =>
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url = `https://usapfac-admin.herokuapp.com/home`;
   const res = await axios.get(url);
   const data = res.data;

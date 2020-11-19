@@ -96,7 +96,7 @@ const BuyTicket = ({ assets }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
   const res2 = await axios.get(url1);
   const data1 = res2.data;
