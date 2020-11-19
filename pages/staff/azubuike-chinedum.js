@@ -122,7 +122,7 @@ const Azubuike = ({ azubuike, aboutWidget, assets }) => {
 };
 
 // Azubuike.getInitialProps = async () => {
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url = `https://usapfac-admin.herokuapp.com/staff-details`;
   const urls = `https://usapfac-admin.herokuapp.com/about-widgets`;
   const url1 = `https://usapfac-admin.herokuapp.com/background-images`;

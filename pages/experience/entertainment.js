@@ -94,7 +94,7 @@ const Entertainment = ({ entertainments, experience }) => {
   );
 };
 
-Entertainment.getInitialProps = async () => {
+export async function getServerSideProps() {
   const url = "https://usapfac-admin.herokuapp.com/experience-widgets";
   const res = await axios.get(url);
   const data = res.data;
@@ -103,7 +103,9 @@ Entertainment.getInitialProps = async () => {
   const res1 = await axios.get(url1);
   const datas = res1.data;
 
-  return { entertainments: data, experience: datas[2] };
-};
+  return {
+    props: { entertainments: data, experience: datas[2] },
+  };
+}
 
 export default Entertainment;

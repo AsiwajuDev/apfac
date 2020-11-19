@@ -81,7 +81,7 @@ const SecondEdition = ({ secondEditions, experience }) => {
   );
 };
 
-SecondEdition.getInitialProps = async () => {
+export async function getServerSideProps() {
   const url = "https://usapfac-admin.herokuapp.com/experience-widgets";
   const res = await axios.get(url);
   const data = res.data;
@@ -90,7 +90,9 @@ SecondEdition.getInitialProps = async () => {
   const res1 = await axios.get(url1);
   const datas = res1.data;
 
-  return { secondEditions: data, experience: datas[1] };
-};
+  return {
+    props: { secondEditions: data, experience: datas[1] },
+  };
+}
 
 export default SecondEdition;

@@ -52,7 +52,7 @@ const Seminar = ({ seminars, assets }) => {
 };
 
 // Seminar.getInitialProps = async () => {
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url = "https://usapfac-admin.herokuapp.com/gallery-widgets";
   const res = await axios.get(url);
   const data = res.data;

@@ -52,7 +52,7 @@ const MeetingGalleryImage = ({ assets, resources }) => {
 };
 
 // MeetingGalleryImage.getInitialProps = async () => {
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // const url = `https://res.cloudinary.com/dxwzdkhyb/image/list/1stedition.json`;
   // const res = await fetcher(url);
   const url = `https://usapfac-admin.herokuapp.com/meeting-pictures-galleries`;

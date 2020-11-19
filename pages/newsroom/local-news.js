@@ -91,7 +91,7 @@ const LocalNews = ({ posts, newsroomWidget, data }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url = `http://newsapi.org/v2/top-headlines?country=ng&apiKey=33fdf48678554c70b4dadf00fca13abb`;
   const res = await fetcher(url);
   const posts = res.articles;

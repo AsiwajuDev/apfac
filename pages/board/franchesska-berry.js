@@ -107,7 +107,7 @@ export default function Berry({ franchesska, aboutWidget,assets }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url = `https://usapfac-admin.herokuapp.com/board-details`;
   const urls = `https://usapfac-admin.herokuapp.com/about-widgets`;
   const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
