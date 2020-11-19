@@ -14,7 +14,9 @@ const fetcher = async function (...args) {
 
 const GalleryImage = ({ assets, resources }) => {
   const router = useRouter();
-
+  {
+    console.log(assets);
+  }
   return (
     <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
@@ -68,7 +70,6 @@ export async function getServerSideProps() {
   const url1 = `https://usapfac-admin.herokuapp.com/background-images`;
   const res2 = await axios.get(url1);
   const data1 = res2.data;
-
 
   return {
     props: { resources: data, assets: data1[13] },
