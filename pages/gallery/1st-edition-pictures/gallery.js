@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import fetch from "isomorphic-unfetch";
-
 import Layout from "../../../components/layout";
 import { SITE_NAME } from "../../../lib/constants";
 import Gallery from "../cloudinary/Gallery";
@@ -14,9 +13,7 @@ const fetcher = async function (...args) {
 
 const GalleryImage = ({ assets, resources }) => {
   const router = useRouter();
-  {
-    console.log(assets);
-  }
+
   return (
     <Layout imageUrl={{ backgroundImage: `url(${assets.headerImage})` }}>
       <Head>
@@ -61,8 +58,8 @@ const GalleryImage = ({ assets, resources }) => {
   );
 };
 
-// GalleryImage.getInitialProps = async () => {
-export async function getServerSideProps() {
+GalleryImage.getInitialProps = async () => {
+// export async function getServerSideProps() {
   const url = `https://usapfac-admin.herokuapp.com/first-edition-pictures-galleries`;
   const res = await axios.get(url);
   const data = res.data;
