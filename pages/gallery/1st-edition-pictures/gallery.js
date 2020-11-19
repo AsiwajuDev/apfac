@@ -58,8 +58,8 @@ const GalleryImage = ({ assets, resources }) => {
   );
 };
 
-GalleryImage.getInitialProps = async () => {
-// export async function getServerSideProps() {
+// GalleryImage.getInitialProps = async () => {
+export async function getServerSideProps() {
   const url = `https://usapfac-admin.herokuapp.com/first-edition-pictures-galleries`;
   const res = await axios.get(url);
   const data = res.data;
