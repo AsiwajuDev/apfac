@@ -84,7 +84,7 @@ const FestivalBoard = ({ boards, assets }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url = "https://usapfac-admin.herokuapp.com/boards";
   const res = await axios.get(url);
   const data = res.data;

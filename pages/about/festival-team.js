@@ -63,8 +63,7 @@ const FestivalTeam = ({ staffs, assets }) => {
   );
 };
 
-// FestivalTeam.getInitialProps = async () => {
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url = "https://usapfac-admin.herokuapp.com/staffs";
   const res = await axios.get(url);
   const data = res.data;
