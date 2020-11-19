@@ -69,9 +69,11 @@ GalleryImage.getInitialProps = async () => {
   const res2 = await axios.get(url1);
   const data1 = res2.data;
 
-  return {
-    props: { resources: data, assets: data1[13] },
-  };
+  return { resources: data, assets: data1[13] };
+
+  // return {
+  //   props: { resources: data, assets: data1[13] },
+  // };
 };
 
 export default GalleryImage;
